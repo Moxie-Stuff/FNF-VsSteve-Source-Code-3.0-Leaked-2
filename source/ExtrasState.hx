@@ -13,7 +13,6 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import io.newgrounds.NG;
 import lime.app.Application;
 import lime.system.System;
 
@@ -28,11 +27,7 @@ class ExtrasState extends MusicBeatState
 	var curSelected:Int = 0;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
-	#if !switch
 	var optionShit:Array<String> = ['bonus songs', 'other songs'];
-	#else
-	var optionShit:Array<String> = ['bonus songs', 'other songs'];
-	#end
 
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
@@ -77,7 +72,6 @@ class ExtrasState extends MusicBeatState
 		startscroll = true;
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
-		
 
 		var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
 
@@ -114,9 +108,6 @@ class ExtrasState extends MusicBeatState
 		add(othersAlert);
 
 		firstStart = false;
-
-		// NG.core.calls.event.logEvent('swag').send();
-
 
 		if (FlxG.save.data.dfjk)
 			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
