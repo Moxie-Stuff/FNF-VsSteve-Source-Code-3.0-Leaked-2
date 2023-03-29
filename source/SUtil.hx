@@ -130,13 +130,22 @@ class SUtil
 			#if android
 			Toast.makeText("Error!\nClouldn't save the crash dump because:\n" + e, Toast.LENGTH_LONG);
 			#else
-			Sys.println("Error!\nClouldn't save the crash dump because:\n" + e);
+			println("Error!\nClouldn't save the crash dump because:\n" + e);
 			#end
 		}
 		#end
 
-		Sys.println(msg);
+		println(msg);
 		Lib.application.window.alert(msg, 'Error!');
 		LimeSystem.exit(1);
+	}
+	
+	private static function println(msg:String):Void
+	{
+		#if sys
+		Sys.println(msg);
+		#else
+		Log.trace(msg, null); // Pass null to exclude the position.
+		#end
 	}
 }
