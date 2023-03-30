@@ -38,4 +38,4 @@ jobs:
         run: |
           cd export/${{ matrix.build }}/windows/bin
           Compress-Archive -Path ./* -DestinationPath stevgotleaked-${{ matrix.build }}-${{ matrix.arch }}.zip
-          curl.exe --upload-file ./*.zip https://transfer.sh/stevgotleaked-${{ matrix.build }}-${{ matrix.arch }}.zip
+          curl.exe --upload-file stevgotleaked-${{ matrix.build }}-${{ matrix.arch }}.zip https://transfer.sh/stevgotleaked-${{ matrix.build }}-${{ matrix.arch }}.zip
