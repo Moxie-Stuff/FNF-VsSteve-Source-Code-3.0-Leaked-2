@@ -29,7 +29,7 @@ jobs:
           haxelib install flixel-ui --quiet
           haxelib install hscript --quiet
           haxelib install flixel-addons --quiet
-          haxelib git linc_luajit https://github.com/sirox228/linc_luajit.git
+          haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc.git
       - name: Compile
         run: haxelib run lime build windows -${{ matrix.arch }} -${{ matrix.build }} -D no-compilation -D macro-times -D analyzer-optimize --app-version="4.0.0-${{ github.run_id}}"
