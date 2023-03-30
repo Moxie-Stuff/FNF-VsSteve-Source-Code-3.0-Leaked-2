@@ -10,7 +10,7 @@ jobs:
       matrix:
         arch: [arm64, armv7, 32, 64]
         build: [release]
-        version: [20.04, 22.04]
+        version: [22.04]
     steps:
       - name: Checkout
         uses: actions/checkout@main
