@@ -25,7 +25,7 @@ import openfl.Assets;
 #if windows
 import Discord.DiscordClient;
 #end
-#if cpp
+#if desktop
 import sys.thread.Thread;
 #end
 
@@ -50,7 +50,7 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		#if sys
+		#if desktop
 		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
 		#end

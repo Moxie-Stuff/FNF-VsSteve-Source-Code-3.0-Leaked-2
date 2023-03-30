@@ -78,6 +78,7 @@ class MusicBeatSubstate extends FlxSubState
 		if (virtualPad != null)
 			virtualPad = FlxDestroyUtil.destroy(virtualPad);
 		#end
+        }
 
 	override function update(elapsed:Float)
 	{
