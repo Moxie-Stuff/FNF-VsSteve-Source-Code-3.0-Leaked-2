@@ -24,11 +24,11 @@ jobs:
           haxelib install hxcpp 4.2.1 --quiet
           haxelib install lime 7.9.0 --quiet
           haxelib install openfl 9.1.0 --quiet
-          haxelib install actuate --quiet
+          haxelib install actuate 1.8.9 --quiet
           haxelib --never git flixel https://github.com/mcagabe19/flixel-4.11.0.git
-          haxelib install flixel-ui --quiet
-          haxelib install hscript --quiet
-          haxelib install flixel-addons --quiet
+          haxelib install flixel-ui 2.3.3 --quiet
+          haxelib install hscript 2.4.0 --quiet
+          haxelib install flixel-addons 2.10.0 --quiet
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc.git
       - name: Compile
