@@ -1518,7 +1518,7 @@ class PlayState extends MusicBeatState
 		//	camHUD.setFilters([new ShaderFilter(vgs)]);
 		// }
 
-		FlxG.camera.follow(camFollow, LOCKON, 0.04 * (30 / (cast(Lib.current.getChildAt(0), Main)).getFPS()));
+		FlxG.camera.follow(camFollow, LOCKON, 0.04 * (30 / (cast(Lib.current.getChildAt(0), Main)).getFPS()#if mobile + 1 #end));
 		FlxG.camera.zoom = defaultCamZoom;
 		FlxG.camera.focusOn(camFollow.getPosition());
 
