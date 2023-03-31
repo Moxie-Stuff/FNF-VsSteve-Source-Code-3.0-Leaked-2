@@ -2,8 +2,9 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin' Vs Steve" file="stevgotleaked" packageName="com.thegabodiaz.vssteve" package="com.thegabodiaz.vssteve" main="Main" version="0.2.7.1" company="thegabodiaz" />
-	<app preloader="flixel.system.FlxPreloader" />
+	<app title="Friday Night Funkin' Vs Steve" file="stevgotleaked" packageName="com.tracedinpurple.vssteve" package="com.tracedinpurple.vssteve" main="Main" version="0.2.7.1" company="TracedInPurple" />
+	<app preloader="flixel.system.FlxPreloader" unless="web"/>
+        <app preloader="source.Preloader" if="web"/>
 
 	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
 	<set name="SWF_VERSION" value="11.8" />
@@ -29,8 +30,6 @@
 	<set name="BUILD_DIR" value="export/32bit" if="32bit" />
 
 	<classpath name="source" />
-	
-	<assets path="mobile" rename="assets/mobile" if="mobileC || mobileCweb" />
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3" unless="web"/>
@@ -40,6 +39,8 @@
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL"/>
 	<define name="mobileCweb" if="web" unless="mobileC"/>
 	<define name="mobileC" if="mobile" unless="mobileCweb"/>
+
+        <assets path="mobile" rename="assets/mobile" if="mobileC || mobileCweb" />
 	
 	<section if="PRELOAD_ALL">
 		<library name="songs"    preload="true" />

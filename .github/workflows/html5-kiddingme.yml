@@ -1,0 +1,41 @@
+name: HTML5 Build CI (Transfer.sh)
+on: [workflow_dispatch]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-${{ matrix.version }}
+    strategy:
+      matrix:
+        version: [22.04]
+        build: [release, debug]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.2.5
+      - name: Install Haxelib
+        run: |
+          haxelib setup ~/haxelib
+          haxelib install lime 7.9.0 --quiet
+          haxelib install openfl 9.1.0 --quiet
+          haxelib install actuate 1.8.9 --quiet
+          haxelib --never git flixel https://github.com/mcagabe19/flixel-4.11.0.git
+          haxelib install flixel-ui 2.3.3 --quiet
+          haxelib install hscript 2.4.0 --quiet
+          haxelib install flixel-addons 2.11.0 --quiet
+      - name: Compile
+        run: haxelib run lime build html5 -${{ matrix.build }} -D macro-times -D analyzer-optimize
+      - name: Publish To transfer.sh
+        run: |
+          cd export/${{ matrix.build }}/html5/bin
+          zip -q -r -9 build-${{ matrix.build }}.zip *
+          curl --upload-file ./*.zip https://transfer.sh/build-${{ matrix.build }}.zip
+          rm ./*.zip
+      - name: Publish To transfer.sh (Only JS)
+        run: |
+          cd export/${{ matrix.build }}/html5/bin
+          zip -q -r -9 onlyjs-${{ matrix.build }}.zip *.js*
+          curl --upload-file ./*.zip https://transfer.sh/onlyjs-${{ matrix.build }}.zip
+          rm ./*.zip
