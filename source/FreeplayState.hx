@@ -163,6 +163,9 @@ class FreeplayState extends MusicBeatState
 		 */
 
                 #if PRELOAD_ALL
+                var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
+		textBG.alpha = 0.6;
+		add(textBG);
 		#if mobileC
 		var leText:String = "Press C to listen to the Song.";
 		var size:Int = 16;
