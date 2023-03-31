@@ -454,6 +454,7 @@ class MainMenuState extends MusicBeatState
 
 				if (FlxG.mouse.justPressed && canClick)
 				{
+                                        FlxG.mouse.visible = false;
 					selectSomething();
 				}
 			}
