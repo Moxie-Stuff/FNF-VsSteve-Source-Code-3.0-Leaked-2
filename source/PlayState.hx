@@ -1,6 +1,7 @@
 package;
 
 // If youre seeing this... Tiago here...
+// mcagabe19: ok
 import Options.SpectatorMode;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
@@ -1700,6 +1701,11 @@ class PlayState extends MusicBeatState
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
 
+                #if (mobileC || mobileCweb)
+                addMobileControls();
+                mobileControls.visible = true;
+                #end
+
 		startingSong = true;
 
 		if (isStoryMode)
@@ -1729,6 +1735,14 @@ class PlayState extends MusicBeatState
 
 		if (!loadRep)
 			rep = new Replay("na");
+
+                #if mobileC
+                addVirtualPad(NONE, A_B);
+                addVirtualPadCamera(false);
+                #elseif mobileCweb
+                addVirtualPad(NONE, P_A_B);
+                addVirtualPadCamera(false);
+                #end
 
 		super.create();
 	}
@@ -3061,7 +3075,7 @@ class PlayState extends MusicBeatState
 
 		if (SONG.song.toLowerCase() == 'suit up')
 		{
-			if (FlxG.keys.justPressed.SPACE)
+			if (#if (mobileC || mobileCweb) virtualPad.buttonB.justPressed || #end FlxG.keys.justPressed.SPACE)
 			{
 				boyfriend.playAnim('block', true);
 				if (oneTimeUse == false)
@@ -3103,7 +3117,7 @@ class PlayState extends MusicBeatState
 		{
 			if (xp == 100)
 			{
-				if (FlxG.keys.anyJustPressed([FlxKey.fromString(FlxG.save.data.regenPotionBind)]) && oneTimeUse == false)
+				if (#if (mobileC || mobileCweb) virtualPad.buttonA.justPressed || #end FlxG.keys.anyJustPressed([FlxKey.fromString(FlxG.save.data.regenPotionBind)]) && oneTimeUse == false)
 				{
 					if (SONG.song.toLowerCase() == 'suit up')
 						hotbar.animation.play('Potion', true);
@@ -3224,7 +3238,7 @@ class PlayState extends MusicBeatState
 
 		scoreTxt.text = Ratings.CalculateRanking(songScore, songScoreDef, nps, maxNPS, accuracy);
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (#if android FlxG.android.justReleased.BACK || #elseif (ios || mobileCweb) virtualPad.buttonP.justPressed || #end controls.PAUSE && startedCountdown && canPause)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -4117,6 +4131,9 @@ class PlayState extends MusicBeatState
 
 	function endSong():Void
 	{
+                #if (mobileC || mobileCweb) mobileControls.visible = false; #end
+
+                #if desktop
 		if (!loadRep)
 			rep.SaveReplay(saveNotes);
 		else
@@ -4125,6 +4142,7 @@ class PlayState extends MusicBeatState
 			FlxG.save.data.scrollSpeed = 1;
 			FlxG.save.data.downscroll = false;
 		}
+                #end
 
 		if (FlxG.save.data.fpsCap > 290)
 			(cast(Lib.current.getChildAt(0), Main)).setFPSCap(290);
@@ -5085,7 +5103,7 @@ class PlayState extends MusicBeatState
 
 	function bfBlock()
 	{
-		if (FlxG.keys.justPressed.SPACE)
+		if (#if (mobileC || mobileCweb) virtualPad.buttonB.justPressed || #end FlxG.keys.justPressed.SPACE)
 		{
 			boyfriend.playAnim('block', true);
 			if (oneTimeUse == false)
@@ -5193,7 +5211,7 @@ class PlayState extends MusicBeatState
 
 	function detectSpace()
 	{
-		if (FlxG.keys.justPressed.SPACE)
+		if (#if (mobileC || mobileCweb) virtualPad.buttonB.justPressed || #end FlxG.keys.justPressed.SPACE)
 		{
 			pressCounter += 1;
 			trace('tap');
