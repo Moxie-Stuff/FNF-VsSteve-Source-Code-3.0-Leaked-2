@@ -813,7 +813,7 @@ class PlayState extends MusicBeatState
 					littlebg.setGraphicSize(Std.int(littlebg.width * daPixelZoom));
 
 					littlebg.updateHitbox();
-				}
+				}*/
 			case 'tutorial':
 				{
 					curStage = 'tutorial';
@@ -837,7 +837,7 @@ class PlayState extends MusicBeatState
 					add(irfan);
 
 					tutorial.updateHitbox();
-				}*/
+				}
 			case 'tf2':
 				{
 					curStage = 'tf2';
@@ -1303,12 +1303,12 @@ class PlayState extends MusicBeatState
 				boyfriend.x += 220;
 				boyfriend.y += 20;
 				gf.x += 240;
-				gf.y += 170;
+				gf.y += 170;*/
 			case 'tutorial':
 				boyfriend.x += 220;
 				boyfriend.y += 20;
 				gf.x += 240;
-				gf.y += 170;*/
+				gf.y += 170;
 			case 'tf2':
 				boyfriend.x += 85;
 				boyfriend.y += 130;
@@ -1355,8 +1355,8 @@ class PlayState extends MusicBeatState
 
 		add(gf);
 
-		if (curStage == 'mine' || curStage == 'cave' || curStage == 'fnmbg' || curStage == 'espionage' /*|| curStage == 'dev' || curStage == 'tutorial'
-			|| curStage == 'endless'*/)
+		if (curStage == 'mine' || curStage == 'cave' || curStage == 'fnmbg' || curStage == 'espionage' /*|| curStage == 'dev'*/ || curStage == 'tutorial'
+			/*|| curStage == 'endless'*/)
 		{
 			remove(gf);
 		}
@@ -1877,8 +1877,8 @@ class PlayState extends MusicBeatState
 			introAssets.set('fnmbg', ['ready', "set", "go"]);
 			introAssets.set('cave', ['ready', "set", "go"]);
 			introAssets.set('notch', ['ready', "set", "go"]);
-			/*introAssets.set('lost', ['ready', "set", "go"]);
-			introAssets.set('tutorial', ['ready', "set", "go"]);*/
+			//introAssets.set('lost', ['ready', "set", "go"]);
+			introAssets.set('tutorial', ['ready', "set", "go"]);
 			introAssets.set('tf2', ['ready', "set", "go"]);
 			//introAssets.set('mcsm', ['ready', "set", "go"]);
 			introAssets.set('espionage', ['ready', "set", "go"]);
@@ -2394,7 +2394,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'funkyArrows':
-					babyArrow.loadGraphic(Paths.image('lost/pixelUI/funkyArrows-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2431,7 +2431,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'hardcore-funkyArrows':
-					babyArrow.loadGraphic(Paths.image('lost/pixelUI/funkyArrows-hardcore-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-hardcore-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2468,7 +2468,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'alex':
-					babyArrow.loadGraphic(Paths.image('cave/pixelUI/alex-arrows-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/alex-arrows-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2505,7 +2505,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'notch':
-					babyArrow.loadGraphic(Paths.image('temple/pixelUI/notch-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/notch-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2542,7 +2542,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'hardcore-notch':
-					babyArrow.loadGraphic(Paths.image('temple/pixelUI/notch-hardcore-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/notch-hardcore-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2616,7 +2616,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				/*case 'devs':
-					babyArrow.loadGraphic(Paths.image('devs/pixelUI/devs-arrows-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/devs-arrows-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2653,7 +2653,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'aww':
-					babyArrow.loadGraphic(Paths.image('creeps/pixelUI/aww-arrows-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/aww-arrows-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2727,7 +2727,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'hardcore-alex':
-					babyArrow.loadGraphic(Paths.image('cave/pixelUI/alex-hardcore-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/alex-hardcore-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2764,7 +2764,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				/*case 'hardcore-aww':
-					babyArrow.loadGraphic(Paths.image('creeps/pixelUI/aww-hardcore-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/aww-hardcore-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2801,7 +2801,7 @@ class PlayState extends MusicBeatState
 					babyArrow.scrollFactor.set();
 
 				case 'hardcore-devs':
-					babyArrow.loadGraphic(Paths.image('devs/pixelUI/devs-hardcore-pixels'), true, 17, 17);
+					babyArrow.loadGraphic(Paths.image('weeb/pixelUI/devs-hardcore-pixels'), true, 17, 17);
 					babyArrow.animation.add('green', [6]);
 					babyArrow.animation.add('red', [7]);
 					babyArrow.animation.add('blue', [5]);
@@ -2934,7 +2934,7 @@ class PlayState extends MusicBeatState
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
 			
-			if (FlxG.save.data.middleScroll) {
+			if (FlxG.save.data.middleScroll && SONG.song.toLowerCase() != 'bos' #if web || SONG.song.toLowerCase() != 'revenge' #end || SONG.song.toLowerCase() != 'espionage' || SONG.song.toLowerCase() != 'bonk' || SONG.song.toLowerCase() != 'entity') {
 				babyArrow.x -= 275;
 				if (player != 1) {
 					babyArrow.visible = false;
@@ -3591,11 +3591,11 @@ class PlayState extends MusicBeatState
 					case 'lost':
 						camFollow.x = boyfriend.getMidpoint().x - 300 + bfnoteMovementXoffset;
 						camFollow.y = boyfriend.getMidpoint().y - 210 + bfnoteMovementYoffset;
-						defaultCamZoom = 1.3;
+						defaultCamZoom = 1.3;*/
 					case 'tutorial':
 						camFollow.x = boyfriend.getMidpoint().x - 400 + bfnoteMovementXoffset;
 						camFollow.y = boyfriend.getMidpoint().y - 400 + bfnoteMovementYoffset;
-						defaultCamZoom = 1.5;*/
+						defaultCamZoom = 1.5;
 					case 'tf2':
 						camFollow.x = boyfriend.getMidpoint().x - 280 + bfnoteMovementXoffset;
 						camFollow.y = boyfriend.getMidpoint().y - 350 + bfnoteMovementYoffset;
