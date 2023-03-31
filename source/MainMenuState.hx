@@ -454,7 +454,6 @@ class MainMenuState extends MusicBeatState
 
 				if (FlxG.mouse.justPressed && canClick)
 				{
-                                        FlxG.mouse.visible = false;
 					selectSomething();
 				}
 			}
@@ -526,15 +525,18 @@ class MainMenuState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				trace("Story Menu Selected");
 			case 'freeplay':
+                                FlxG.mouse.visible = false;
 				FlxG.switchState(new DifficultyInfo());
 				trace("Freeplay Menu Selected");
 			case 'ouh':
 				trace("WHAT THE FUCK HAPPENED");
 			case 'options':
+                                FlxG.mouse.visible = false;
 				FlxG.switchState(new OptionsMenu());
 			case 'quit':
 				System.exit(0);
 			case 'credits':
+                                FlxG.mouse.visible = false;
 				FlxG.switchState(new WarnCreditState());
 			case 'bonus':
 				FlxG.switchState(new ExtrasState());
