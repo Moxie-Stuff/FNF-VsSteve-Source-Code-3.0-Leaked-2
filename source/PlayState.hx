@@ -308,6 +308,7 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
+                FlxG.mouse.visible = false;
                 Paths.clearUnusedMemory();
                 Paths.clearStoredMemory();
 		instance = this;
