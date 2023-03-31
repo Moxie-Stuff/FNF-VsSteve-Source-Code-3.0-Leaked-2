@@ -120,7 +120,7 @@ class FlxVirtualPad extends FlxSpriteGroup
 			case A_B:
 				add(buttonB = createButton(FlxG.width - 258, FlxG.height - 135, 'b', 0xFFCB00));
 				add(buttonA = createButton(FlxG.width - 132, FlxG.height - 135, 'a', 0xFF0000));
-			case P:
+			case P_A_B:
 				add(buttonP = createButton(FlxG.width - 132, 0, 'x', 0x99062D));
 				add(buttonB = createButton(FlxG.width - 258, FlxG.height - 135, 'b', 0xFFCB00));
 				add(buttonA = createButton(FlxG.width - 132, FlxG.height - 135, 'a', 0xFF0000));

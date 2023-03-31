@@ -214,7 +214,7 @@ class PlayState extends MusicBeatState
 	var detectAttack:Bool = false;
 
 	var bgGirls:BackgroundGirls;
-	var bgDevs:BackgroundDevs;
+	//var bgDevs:BackgroundDevs;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 
 	var talking:Bool = true;
