@@ -160,7 +160,7 @@ class OptionsMenu extends MusicBeatState
                         var pressedRight = #if (mobileC || mobileCweb) virtualPad.buttonRight.pressed || #end FlxG.keys.pressed.RIGHT;
                         var pressedLeft = #if (mobileC || mobileCweb) virtualPad.buttonLeft.pressed || #end FlxG.keys.pressed.LEFT;
                         var justPressedRight = #if (mobileC || mobileCweb) virtualPad.buttonRight.justPressed || #end FlxG.keys.justPressed.RIGHT;
-                        var pressedRight = #if (mobileC || mobileCweb) virtualPad.buttonLeft.justPressed || #end FlxG.keys.justPressed.LEFT;
+                        var justPressedLeft = #if (mobileC || mobileCweb) virtualPad.buttonLeft.justPressed || #end FlxG.keys.justPressed.LEFT;
 			
 			if (isCat)
 			{

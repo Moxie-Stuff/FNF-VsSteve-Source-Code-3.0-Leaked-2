@@ -1,6 +1,6 @@
 package;
 
-/*import flixel.FlxSprite;
+import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 
 class BackgroundDevs extends FlxSprite
@@ -30,4 +30,3 @@ class BackgroundDevs extends FlxSprite
 			animation.play('danceLeft', true);
 	}
 }
-*/
