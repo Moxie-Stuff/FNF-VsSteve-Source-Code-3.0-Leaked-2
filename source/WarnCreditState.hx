@@ -32,6 +32,8 @@ class WarnCreditState extends MusicBeatState
 		bg.scale.y *= 5;
 		bg.screenCenter();
 		add(bg);
+
+                FlxG.mouse.visible = false;
 		
 		var kadeLogo:FlxSprite = new FlxSprite(FlxG.width, 0).loadGraphic(Paths.image('logoBumpin'));
 		kadeLogo.scale.y = 0.3;

@@ -70,6 +70,7 @@ class OptionsMenu extends MusicBeatState
 	var blackBorder:FlxSprite;
 	override function create()
 	{
+                FlxG.mouse.visible = false;
                 Paths.clearUnusedMemory();
                 Paths.clearStoredMemory();
 		instance = this;

@@ -119,6 +119,8 @@ class ExtrasState extends MusicBeatState
 
 		changeItem();
 
+                #if (mobileC || mobileCweb) addVirtualPad(NONE, B); #end
+
 		super.create();
 	}
 
@@ -241,6 +243,7 @@ class ExtrasState extends MusicBeatState
 		{
 			case 'bonus songs':
                                 selectedBonus = true;
+                                FlxG.mouse.visible = false;
 				FlxG.switchState(new FreeplayState());
 				trace("bonus songs!");
 

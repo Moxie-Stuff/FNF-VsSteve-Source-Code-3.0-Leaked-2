@@ -181,6 +181,8 @@ class FreeplayState extends MusicBeatState
 		add(text);
                 #end
 
+                FlxG.mouse.visible = false;
+
 		#if mobileC
                 if (ExtrasState.selectedBonus == true) {
 		addVirtualPad(UP_DOWN, A_B_C);

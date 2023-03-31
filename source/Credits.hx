@@ -62,6 +62,8 @@ class Credits extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
+                FlxG.mouse.visible = false;
+
 		bg = new FlxSprite().loadGraphic(Paths.image('creditsBGTest'));
         bg.x -= 10;
 		bg.y -= 20;
