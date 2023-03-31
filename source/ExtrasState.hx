@@ -15,7 +15,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import lime.system.System;
-
 #if windows
 import Discord.DiscordClient;
 #end
@@ -24,6 +23,8 @@ using StringTools;
 
 class ExtrasState extends MusicBeatState
 {
+        public static var selectedBonus:Bool;
+
 	var curSelected:Int = 0;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
@@ -237,7 +238,8 @@ class ExtrasState extends MusicBeatState
 		switch (daChoice)
 		{
 			case 'bonus songs':
-				FlxG.switchState(new FreeplayStateBonus());
+                                selectedBonus = true;
+				FlxG.switchState(new FreeplayState());
 				trace("bonus songs!");
 
 			case 'other songs':
