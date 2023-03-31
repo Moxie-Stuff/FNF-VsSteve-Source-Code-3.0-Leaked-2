@@ -30,12 +30,12 @@ jobs:
       - name: Publish To transfer.sh
         run: |
           cd export/${{ matrix.build }}/html5/bin
-          zip -r -9 build-${{ matrix.build }}.zip *
-          curl --upload-file ./*.zip https://transfer.sh/build-${{ matrix.build }}-${{ matrix.arch }}.zip
+          zip -q -r -9 build-${{ matrix.build }}.zip *
+          curl --upload-file ./*.zip https://transfer.sh/build-${{ matrix.build }}.zip
           rm ./*.zip
       - name: Publish To transfer.sh (Only JS)
         run: |
           cd export/${{ matrix.build }}/html5/bin
-          zip -r -9 onlyjs-${{ matrix.build }}.zip *.js*
-          curl --upload-file ./*.zip https://transfer.sh/onlyjs-${{ matrix.build }}-${{ matrix.arch }}.zip
+          zip -q -r -9 onlyjs-${{ matrix.build }}.zip *.js*
+          curl --upload-file ./*.zip https://transfer.sh/onlyjs-${{ matrix.build }}.zip
           rm ./*.zip
