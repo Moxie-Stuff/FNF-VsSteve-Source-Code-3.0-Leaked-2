@@ -25,8 +25,10 @@ class DifficultyInfo extends MusicBeatState
 
 	override function create()
 	{
+                Paths.clearUnusedMemory();
+                Paths.clearStoredMemory();
 		super.create();
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuPNG', 'shared'));
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuPNG'));
 		bg.scale.x *= 2;
 		bg.scale.y *= 2;
 		bg.screenCenter();

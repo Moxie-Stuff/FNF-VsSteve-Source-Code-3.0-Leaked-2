@@ -1,8 +1,6 @@
-bf
 bf-pixel
 bfminecraft
 gf-pixel
-gf-christmas
 tuxsteveuoh
 tuxsteve
 steve-armor

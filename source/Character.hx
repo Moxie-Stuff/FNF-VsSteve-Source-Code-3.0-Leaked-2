@@ -29,7 +29,7 @@ class Character extends FlxSprite
 
 		switch (curCharacter)
 		{
-			case 'gf':
+			/*case 'gf':
 				// GIRLFRIEND CODE
 				iconColor = 'FFB03060';
 				tex = Paths.getSparrowAtlas('characters/GF_assets');
@@ -60,7 +60,7 @@ class Character extends FlxSprite
 
 				addOffset('scared', -2, -17);
 
-				playAnim('danceRight');
+				playAnim('danceRight');*/
 
 			case 'gf-christmas':
 				iconColor = 'FFB03060';
@@ -94,20 +94,6 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'gf-car':
-				iconColor = 'FFB03060';
-				tex = Paths.getSparrowAtlas('characters/gfCar');
-				frames = tex;
-				animation.addByIndices('singUP', 'GF Dancing Beat Hair blowing CAR', [0], "", 24, false);
-				animation.addByIndices('danceLeft', 'GF Dancing Beat Hair blowing CAR', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-				animation.addByIndices('danceRight', 'GF Dancing Beat Hair blowing CAR', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24,
-					false);
-
-				addOffset('danceLeft', 0);
-				addOffset('danceRight', 0);
-
-				playAnim('danceRight');
-
 			case 'gf-pixel':
 				iconColor = 'FFB03060';
 				tex = Paths.getSparrowAtlas('characters/gfPixel');
@@ -128,7 +114,7 @@ class Character extends FlxSprite
 				updateHitbox();
 				antialiasing = false;
 
-			case 'bf':
+			/*case 'bf':
 				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
@@ -170,8 +156,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-				flipX = true;
-
+				flipX = true;*/
 
 			case 'bf-pixel':
 				frames = Paths.getSparrowAtlas('characters/bfPixel');
@@ -245,7 +230,7 @@ class Character extends FlxSprite
 
 				flipX = true;
 			
-			case 'bfeyes':
+			/*case 'bfeyes':
 				frames = Paths.getSparrowAtlas('characters/bfeyes');
 				animation.addByPrefix('idle', 'BF IDLE', 24, false);
 				animation.addByPrefix('singUP', 'BF UP NOTE', 24, false);
@@ -277,7 +262,7 @@ class Character extends FlxSprite
 
 				antialiasing = false;
 
-				flipX = true;
+				flipX = true;*/
 			case 'bf-pixel-dead':
 				frames = Paths.getSparrowAtlas('characters/bfPixelsDEAD');
 				animation.addByPrefix('singUP', "BF Dies pixel", 24, false);
@@ -296,7 +281,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 				flipX = true;
 
-			case 'senpai':
+			/*case 'senpai':
 				iconColor = 'FF2B5480';
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Senpai Idle', 24, false);
@@ -360,7 +345,7 @@ class Character extends FlxSprite
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
 
-				antialiasing = false;
+				antialiasing = false;*/
 
 			case 'steve-armor':
 				iconColor = 'FF224367';
@@ -387,7 +372,7 @@ class Character extends FlxSprite
 
 				antialiasing = false;
 
-			case 'stevehorse':
+			/*case 'stevehorse':
 				iconColor = 'FF2B5480';
 				frames = Paths.getSparrowAtlas('characters/steveHorse');
 				animation.addByPrefix('idle', 'steveHorse idle', 24, false);
@@ -407,7 +392,7 @@ class Character extends FlxSprite
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
 
-				antialiasing = false;
+				antialiasing = false;*/
 				
 			case 'tuxsteveuoh':
 				iconColor = 'FF2B5480';
@@ -588,7 +573,7 @@ class Character extends FlxSprite
 
 				antialiasing = false;
 
-			case 'gabo':
+			/*case 'gabo':
 				iconColor = 'FF8FD8D4';
 				frames = Paths.getSparrowAtlas('characters/gabo');
 				animation.addByPrefix('idle', 'gabo Idle', 24, false);
@@ -607,7 +592,7 @@ class Character extends FlxSprite
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
 
-				antialiasing = false;
+				antialiasing = false;*/
 
 			case 'jaziel':
 				iconColor = 'FFFF0000';
@@ -701,7 +686,7 @@ class Character extends FlxSprite
 
 				antialiasing = false;
 
-			case 'jesse':
+			/*case 'jesse':
 				iconColor = 'FFFF0000';
 				frames = Paths.getSparrowAtlas('characters/jesse');
 				animation.addByPrefix('idle', 'jesse idle', 24, false);
@@ -720,7 +705,7 @@ class Character extends FlxSprite
 
 				setGraphicSize(Std.int(width * 1.1));
 
-				antialiasing = true;
+				antialiasing = true;*/
 
 			case 'notch':
 				iconColor = 'FFd7711a';
@@ -753,7 +738,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 
-			case 'jeb':
+			/*case 'jeb':
 				iconColor = 'FFFFFFFF';
 				frames = Paths.getSparrowAtlas('characters/jeb');
 				animation.addByPrefix('idle', 'jeb idle', 24, false);
@@ -773,7 +758,7 @@ class Character extends FlxSprite
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
 	
-				antialiasing = false;
+				antialiasing = false;*/
 
 			case '303':
 				iconColor = 'FFFF0000';

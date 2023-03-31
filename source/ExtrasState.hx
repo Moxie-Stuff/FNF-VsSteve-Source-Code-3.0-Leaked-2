@@ -43,6 +43,8 @@ class ExtrasState extends MusicBeatState
 
 	override function create()
 	{
+                Paths.clearUnusedMemory();
+                Paths.clearStoredMemory();
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Extras Menu", null);

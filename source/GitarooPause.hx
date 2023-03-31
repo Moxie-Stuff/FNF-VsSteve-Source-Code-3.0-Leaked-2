@@ -18,6 +18,8 @@ class GitarooPause extends MusicBeatState
 
 	override function create()
 	{
+                Paths.clearUnusedMemory();
+                Paths.clearStoredMemory();
 		if (FlxG.sound.music != null)
 			FlxG.sound.music.stop();
 

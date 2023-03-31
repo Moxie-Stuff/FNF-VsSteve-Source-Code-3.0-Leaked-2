@@ -1,6 +1,6 @@
 package;
 
-import flixel.FlxSprite;
+/*import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 
 class BackgroundDevs extends FlxSprite
@@ -10,7 +10,7 @@ class BackgroundDevs extends FlxSprite
 		super(x, y);
 
 		// BG fangirls dissuaded
-		frames = Paths.getSparrowAtlas('devs/bgDevs', 'shared');
+		frames = Paths.getSparrowAtlas('devs/bgDevs');
 
 		animation.addByIndices('danceLeft', 'BG devs group', CoolUtil.numberArray(14), "", 24, false);
 		animation.addByIndices('danceRight', 'BG devs group', CoolUtil.numberArray(30, 15), "", 24, false);
@@ -30,3 +30,4 @@ class BackgroundDevs extends FlxSprite
 			animation.play('danceLeft', true);
 	}
 }
+*/

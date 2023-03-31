@@ -68,7 +68,7 @@ class Note extends FlxSprite
 		switch (PlayState.SONG.noteStyle)
 		{
 			case 'pixel':
-				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels'), true, 17, 17);
 
 				if (noteType == 3)
 				{
@@ -87,7 +87,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/arrowEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/arrowEnds'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -103,7 +103,7 @@ class Note extends FlxSprite
 				updateHitbox();
 
 				case 'funkyArrows':
-					loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-pixels','week6'), true, 17, 17);
+					loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-pixels'), true, 17, 17);
 	
 					if (noteType == 3)
 					{
@@ -122,7 +122,7 @@ class Note extends FlxSprite
 	
 					if (isSustainNote)
 					{
-						loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-arrowEnds','week6'), true, 7, 6);
+						loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-arrowEnds'), true, 7, 6);
 	
 						animation.add('purpleholdend', [4]);
 						animation.add('greenholdend', [6]);
@@ -138,7 +138,7 @@ class Note extends FlxSprite
 					updateHitbox();
 
 					case 'hardcore-funkyArrows':
-						loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-hardcore-pixels','week6'), true, 17, 17);
+						loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-hardcore-pixels'), true, 17, 17);
 		
 						if (noteType == 3)
 						{
@@ -157,7 +157,7 @@ class Note extends FlxSprite
 		
 						if (isSustainNote)
 						{
-							loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-hardcore-arrowEnds','week6'), true, 7, 6);
+							loadGraphic(Paths.image('weeb/pixelUI/funkyArrows-hardcore-arrowEnds'), true, 7, 6);
 		
 							animation.add('purpleholdend', [4]);
 							animation.add('greenholdend', [6]);
@@ -173,7 +173,7 @@ class Note extends FlxSprite
 						updateHitbox();
 
 			case 'alex':
-				loadGraphic(Paths.image('weeb/pixelUI/alex-arrows-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/alex-arrows-pixels'), true, 17, 17);
 
 				if (noteType == 2)
 				{
@@ -192,7 +192,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/alex-arrowEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/alex-arrowEnds'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -208,7 +208,7 @@ class Note extends FlxSprite
 				updateHitbox();
 
 			case 'notch':
-				loadGraphic(Paths.image('weeb/pixelUI/notch-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/notch-pixels'), true, 17, 17);
 
 				if (noteType == 5)
 				{
@@ -227,7 +227,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/notch-arrowEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/notch-arrowEnds'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -243,7 +243,7 @@ class Note extends FlxSprite
 				updateHitbox();
 
 			case 'hardcore-notch':
-				loadGraphic(Paths.image('weeb/pixelUI/notch-hardcore-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/notch-hardcore-pixels'), true, 17, 17);
 
 				if (noteType == 5)
 				{
@@ -269,7 +269,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/notch-hardcoreEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/notch-hardcoreEnds'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -284,8 +284,8 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 				updateHitbox();
 
-			case 'Majin':
-				loadGraphic(Paths.image('weeb/pixelUI/Majin_Notes','week6'), true, 17, 17);
+			/*case 'Majin':
+				loadGraphic(Paths.image('weeb/pixelUI/Majin_Notes'), true, 17, 17);
 
 				if (noteType == 2)
 				{
@@ -304,7 +304,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/Majin_Notes_ends','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/Majin_Notes_ends'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -320,7 +320,7 @@ class Note extends FlxSprite
 				updateHitbox();
 
 			case 'devs':
-				loadGraphic(Paths.image('weeb/pixelUI/devs-arrows-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/devs-arrows-pixels'), true, 17, 17);
 			
 				if (noteType == 2)
 				{
@@ -338,7 +338,7 @@ class Note extends FlxSprite
 				}
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/devs-arrowEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/devs-arrowEnds'), true, 7, 6);
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
 					animation.add('redholdend', [7]);
@@ -352,7 +352,7 @@ class Note extends FlxSprite
 				updateHitbox();
 
 			case 'aww':
-				loadGraphic(Paths.image('weeb/pixelUI/aww-arrows-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/aww-arrows-pixels'), true, 17, 17);
 				
 				if (noteType == 2)
 				{
@@ -371,7 +371,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/aww-arrowEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/aww-arrowEnds'), true, 7, 6);
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
 					animation.add('redholdend', [7]);
@@ -382,10 +382,10 @@ class Note extends FlxSprite
 					animation.add('bluehold', [1]);
 				}
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
-				updateHitbox();
+				updateHitbox();*/
 
 			case 'hardcore':
-				loadGraphic(Paths.image('weeb/pixelUI/hardcore-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/hardcore-pixels'), true, 17, 17);
 
 				if (noteType == 3)
 					{
@@ -404,7 +404,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/hardcoreEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/hardcoreEnds'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -421,7 +421,7 @@ class Note extends FlxSprite
 				updateHitbox();
 				
 			case 'hardcore-alex':
-				loadGraphic(Paths.image('weeb/pixelUI/alex-hardcore-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/alex-hardcore-pixels'), true, 17, 17);
 
 				if (noteType == 2)
 					{
@@ -440,7 +440,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/alex-hardcoreEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/alex-hardcoreEnds'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -456,8 +456,8 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 				updateHitbox();
 
-			case 'hardcore-aww':
-				loadGraphic(Paths.image('weeb/pixelUI/aww-hardcore-pixels','week6'), true, 17, 17);
+			/*case 'hardcore-aww':
+				loadGraphic(Paths.image('weeb/pixelUI/aww-hardcore-pixels'), true, 17, 17);
 	
 				animation.add('greenScroll', [6]);
 				animation.add('redScroll', [7]);
@@ -466,7 +466,7 @@ class Note extends FlxSprite
 	
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/aww-hardcoreEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/aww-hardcoreEnds'), true, 7, 6);
 	
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -483,7 +483,7 @@ class Note extends FlxSprite
 				updateHitbox();
 
 			case 'hardcore-devs':
-				loadGraphic(Paths.image('weeb/pixelUI/devs-hardcore-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/devs-hardcore-pixels'), true, 17, 17);
 	
 				animation.add('greenScroll', [6]);
 				animation.add('redScroll', [7]);
@@ -492,7 +492,7 @@ class Note extends FlxSprite
 	
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/devs-hardcoreEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/devs-hardcoreEnds'), true, 7, 6);
 	
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);
@@ -506,10 +506,10 @@ class Note extends FlxSprite
 				}
 	
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
-				updateHitbox();
+				updateHitbox();*/
 			
 			default:
-				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
+				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels'), true, 17, 17);
 
 				if (noteType == 2)
 				{
@@ -528,7 +528,7 @@ class Note extends FlxSprite
 
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('weeb/pixelUI/arrowEnds','week6'), true, 7, 6);
+					loadGraphic(Paths.image('weeb/pixelUI/arrowEnds'), true, 7, 6);
 
 					animation.add('purpleholdend', [4]);
 					animation.add('greenholdend', [6]);

@@ -21,7 +21,7 @@ import flash.display.BlendMode;
  
 @:bitmap("assets/preload/images/titleBG.png") class Bg extends BitmapData {}
 @:bitmap("assets/preload/images/titleBG.png") class BgCopy extends BitmapData {}
-@:bitmap("assets/preload/images/logoBumpin.png") class LogoShit extends BitmapData {}
+@:bitmap("assets/preload/images/logoBumpinPreFinal.png") class LogoShit extends BitmapData {}
 @:font("assets/fonts/vcr.ttf") class CustomFont extends Font {}
  
 class Preloader extends FlxBasePreloader
