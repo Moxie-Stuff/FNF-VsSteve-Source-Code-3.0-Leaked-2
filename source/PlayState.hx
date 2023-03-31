@@ -2934,7 +2934,7 @@ class PlayState extends MusicBeatState
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
 			
-			if (FlxG.save.data.middleScroll && SONG.song.toLowerCase() != 'bos' #if web || SONG.song.toLowerCase() != 'revenge' #end || SONG.song.toLowerCase() != 'espionage' || SONG.song.toLowerCase() != 'bonk' || SONG.song.toLowerCase() != 'entity') {
+			if (FlxG.save.data.middleScroll && SONG.song.toLowerCase() != 'bos' #if !web || SONG.song.toLowerCase() != 'revenge' #end || SONG.song.toLowerCase() != 'espionage' || SONG.song.toLowerCase() != 'bonk' || SONG.song.toLowerCase() != 'entity') {
 				babyArrow.x -= 275;
 				if (player != 1) {
 					babyArrow.visible = false;
