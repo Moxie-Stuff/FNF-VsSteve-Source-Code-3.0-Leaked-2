@@ -32,8 +32,8 @@
 	
 	<assets path="mobile" rename="assets/mobile" if="mobileC || mobileCweb" />
 
-	<assets path="assets/preload" rename="assets" exclude="*.ogg" embed="true" if="web"/>
-	<assets path="assets/preload" rename="assets" exclude="*.mp3" embed="true" unless="web"/>
+	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
+	<assets path="assets/preload" rename="assets" exclude="*.mp3" unless="web"/>
 	
 	<!-- <define name="PRELOAD_ALL" /> -->
 	<define name="PRELOAD_ALL" unless="web" />
@@ -54,11 +54,11 @@
 		<library name="tutorial" preload="false" />
 		<library name="week6"    preload="false" />
 	</section>
-
+	
 	<assets path="assets/songs"    library="songs"    exclude="*.ogg" if="web"/>
 	<assets path="assets/songs"    library="songs"    exclude="*.mp3" unless="web"/>
-	<assets path="assets/shared"   library="shared"   exclude="*.ogg" embed="true" if="web"/>
-	<assets path="assets/shared"   library="shared"   exclude="*.mp3" embed="true" unless="web"/>
+	<assets path="assets/shared"   library="shared"   exclude="*.ogg" if="web"/>
+	<assets path="assets/shared"   library="shared"   exclude="*.mp3" unless="web"/>
 	<assets path="assets/tutorial" library="tutorial" exclude="*.ogg" if="web"/>
 	<assets path="assets/tutorial" library="tutorial" exclude="*.mp3" unless="web"/>
 	<assets path="assets/week6"    library="week6"    exclude="*.ogg" if="web"/>
