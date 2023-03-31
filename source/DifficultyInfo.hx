@@ -39,10 +39,7 @@ class DifficultyInfo extends MusicBeatState
 		difficInfo.screenCenter();
 		add(difficInfo);
 		
-		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Press Enter to Proceed\n"
-
-			);
+		#if mobileC var txt:FlxText = new FlxText(0, 0, FlxG.width, "Press A to Proceed, Press B to go Back.\n"); #elseif mobileCweb var txt:FlxText = new FlxText(0, 0, FlxG.width, "Press Enter/A to Proceed, Press Backspace/Escape/B to go Back.\n"); #elseif (!mobileC || !mobileCweb) var txt:FlxText = new FlxText(0, 0, FlxG.width, "Press Enter to Proceed, Press Backspace/Escape to go Back.\n"); #end
 		
 		txt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.fromRGB(200, 200, 200), CENTER);
 		txt.borderColor = FlxColor.BLACK;
@@ -60,6 +57,8 @@ class DifficultyInfo extends MusicBeatState
 			if(colorRotation < (bgColors.length - 1)) colorRotation++;
 			else colorRotation = 0;
 		}, 0);
+
+                #if (mobileC || mobileCweb) addVirtualPad(NONE, A_B); #end
 	}
 
 	override function update(elapsed:Float)
