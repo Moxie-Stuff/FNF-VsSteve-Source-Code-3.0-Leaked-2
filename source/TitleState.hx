@@ -50,6 +50,10 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
+                #if android
+                FlxG.android.preventDefaultKeys = [BACK];
+                #end
+
 		#if desktop
 		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
@@ -217,7 +221,7 @@ class TitleState extends MusicBeatState
 
 		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
 
-		#if mobile
+		#if (mobileC || mobileCweb || mobile)
 		for (touch in FlxG.touches.list)
 		{
 			if (touch.justPressed)
