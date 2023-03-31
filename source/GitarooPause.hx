@@ -26,6 +26,8 @@ class GitarooPause extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('pauseAlt/pauseBG'));
 		add(bg);
 
+                FlxG.mouse.visible = false;
+
 		var bf:FlxSprite = new FlxSprite(0, 30);
 		bf.frames = Paths.getSparrowAtlas('pauseAlt/bfLol');
 		bf.animation.addByPrefix('lol', "funnyThing", 13);
@@ -48,6 +50,8 @@ class GitarooPause extends MusicBeatState
 		add(cancelButton);
 
 		changeThing();
+
+                addVirtualPad(LEFT_RIGHT, A);
 
 		super.create();
 	}
