@@ -89,6 +89,12 @@ class PauseSubState extends MusicBeatSubstate
 		changeSelection();
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+                #if (mobileC || mobileCweb)
+                if (FlxG.save.data.mobileC) {
+		addVirtualPad(UP_DOWN, A);
+                addVirtualPadCamera(); }
+		#end
 	}
 
 
@@ -209,7 +215,7 @@ class PauseSubState extends MusicBeatSubstate
 							FlxG.save.data.downscroll = false;
 						}
 						PlayState.loadRep = false;
-						#if windows
+						#if cpp
 						if (PlayState.luaModchart != null)
 						{
 							PlayState.luaModchart.die();
@@ -228,7 +234,7 @@ class PauseSubState extends MusicBeatSubstate
 						FlxG.save.data.downscroll = false;
 					}
 					PlayState.loadRep = false;
-					#if windows
+					#if cpp
 					if (PlayState.luaModchart != null)
 					{
 						PlayState.luaModchart.die();
