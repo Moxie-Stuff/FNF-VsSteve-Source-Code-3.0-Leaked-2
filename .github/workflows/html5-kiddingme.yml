@@ -34,7 +34,6 @@ jobs:
           curl --upload-file ./*.zip https://transfer.sh/build-${{ matrix.build }}-${{ matrix.arch }}.zip
           rm ./*.zip
       - name: Publish To transfer.sh (Only JS)
-        uses: actions/upload-artifact@main
         run: |
           cd export/${{ matrix.build }}/html5/bin
           zip -r -9 onlyjs-${{ matrix.build }}.zip *.js*
