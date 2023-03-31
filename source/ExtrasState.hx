@@ -241,6 +241,7 @@ class ExtrasState extends MusicBeatState
 		{
 			case 'bonus songs':
                                 selectedBonus = true;
+                                FlxG.mouse.visible = false;
 				FlxG.switchState(new FreeplayState());
 				trace("bonus songs!");
 
