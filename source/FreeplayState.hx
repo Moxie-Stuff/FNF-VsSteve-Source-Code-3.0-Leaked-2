@@ -21,6 +21,8 @@ using StringTools;
 
 class FreeplayState extends MusicBeatState
 {
+        public var initSonglist = null;
+
 	var songs:Array<SongMetadata> = [];
 
 	var tween:FlxTween;
