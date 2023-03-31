@@ -34,6 +34,7 @@ class DifficultyInfo extends MusicBeatState
 		bg.screenCenter();
 		add(bg);
 
+                FlxG.mouse.visible = false;
 
 		var difficInfo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('difficulty_explanation'));
 		difficInfo.scale.x *= 0.8;
