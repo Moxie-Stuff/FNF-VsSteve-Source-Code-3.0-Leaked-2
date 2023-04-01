@@ -116,7 +116,6 @@ class ScreenShotPlugin extends flixel.FlxBasic {
 			#end
 		}
 		#end
-            #end
             flashSprite.alpha = 1;
             FlxTween.tween(flashSprite, {alpha: 0}, 0.25);
             shotDisplayBitmap.bitmapData = shot.bitmapData;
