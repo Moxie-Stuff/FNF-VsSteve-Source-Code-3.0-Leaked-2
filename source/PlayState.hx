@@ -3,8 +3,9 @@ package;
 // If youre seeing this... Tiago here...
 // mcagabe19: ok
 #if web
-import openfl.media.Sound;
+import js.html.AudioElement;
 #end
+import openfl.utils.Assets;
 import Options.SpectatorMode;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
@@ -2206,7 +2207,7 @@ class PlayState extends MusicBeatState
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
                         #else
                         var vocals:FlxSound = new FlxSound();
-                        var vocalAsset:Sound = openfl.utils.Assets.getSound(Paths.voices(PlayState.SONG.song));
+                        var vocalAsset:AudioElement = cast(Assets.getAudio(Paths.voices(PlayState.SONG.song));
                         vocals.loadStream(vocalAsset);
                         #end
 		} else {
