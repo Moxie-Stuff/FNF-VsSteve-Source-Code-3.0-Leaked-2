@@ -2,9 +2,6 @@ package;
 
 // If youre seeing this... Tiago here...
 // mcagabe19: ok
-#if web
-import js.html.AudioElement;
-#end
 import openfl.utils.Assets as OpenFlAssets;
 import Options.SpectatorMode;
 import flixel.input.keyboard.FlxKey;
@@ -2203,15 +2200,7 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
                 if (SONG.needsVoices) {
-                        #if !web
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
-                        #else
-                        //var vocalPath = Paths.voices(PlayState.SONG.song));
-                        //var vocalPath = 'songs:assets/songs/' + SONG.song.toLowerCase() + 'Voices.mp3';
-                        var vocals:FlxSound = new FlxSound();
-                        var vocalAsset:AudioElement = cast(OpenFlAssets.getSound('songs:assets/songs/' + SONG.song.toLowerCase() + 'Voices.mp3'));
-                        vocals.loadStream(vocalAsset);
-                        #end
 		} else {
 			vocals = new FlxSound(); }
 
