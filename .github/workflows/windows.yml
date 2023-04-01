@@ -32,7 +32,7 @@ jobs:
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc.git
       - name: Compile
-        run: haxelib run lime build windows -${{ matrix.arch }} -${{ matrix.build }} -D no-compilation -D macro-times -D analyzer-optimize --app-version="4.0.0-${{ github.run_id}}"
+        run: haxelib run lime build windows -${{ matrix.arch }} -${{ matrix.build }} -D no-compilation -D macro-times -D analyzer-optimize
       - name: Publish Artifact
         uses: actions/upload-artifact@main
         with:
