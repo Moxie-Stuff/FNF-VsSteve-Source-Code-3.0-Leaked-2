@@ -102,9 +102,9 @@ class ScreenShotPlugin extends flixel.FlxBasic {
             #if sys
             try
             {
-            var path = "screenshots/Screenshot " + Date.now().toString().split(":").join("-") + saveFormat;
             if (!FileSystem.exists(SUtil.getStorageDirectory() + './screenshots/'))
                 FileSystem.createDirectory(SUtil.getStorageDirectory() + './screenshots/');
+            var path = SUtil.getStorageDirectory() + 'screenshots/Screenshot ' +  Date.now().toString().replace(' ', '-').replace(':', "'") + saveFormat;
             sys.io.File.saveBytes(path, png);
             }
             catch (e:Dynamic)
