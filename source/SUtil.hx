@@ -15,8 +15,6 @@ import openfl.utils.Assets;
 #if sys
 import sys.FileSystem;
 import sys.io.File;
-#else
-import haxe.Log;
 #end
 
 using StringTools;
@@ -140,12 +138,12 @@ class SUtil
 		LimeSystem.exit(1);
 	}
 	
-	private static function println(msg:String):Void
+	public static function println(msg:String):Void
 	{
 		#if sys
 		Sys.println(msg);
 		#else
-		Log.trace(msg, null); // Pass null to exclude the position.
+		haxe.Log.trace(msg, null); // Pass null to exclude the position.
 		#end
 	}
 }
