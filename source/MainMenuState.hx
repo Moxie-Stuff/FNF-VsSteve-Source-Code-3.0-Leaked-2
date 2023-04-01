@@ -397,7 +397,6 @@ class MainMenuState extends MusicBeatState
 		if (enter && pressCount == 6)
 		{
 			    daEntity();
-			}
 		}
 
 		#if android
