@@ -1980,7 +1980,11 @@ class PlayState extends MusicBeatState
 
 		if (!paused)
 		{
+		        #if !web
 			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+		        #else
+                        FlxG.sound.playMusic('assets/songs/' + PlayState.SONG.song.toLowerCase() + '/Inst.mp3', 1, false);
+		        #end
 		}
 
 		FlxG.sound.music.onComplete = endSong;
@@ -2200,7 +2204,11 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
                 if (SONG.needsVoices) {
+                        #if !web
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+                        #else
+                        vocals = new FlxSound().loadEmbedded('assets/songs/' + PlayState.SONG.song.toLowerCase() + '/Voices.mp3');
+                        #end
 		} else {
 			vocals = new FlxSound(); }
 
