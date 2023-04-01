@@ -32,7 +32,6 @@ using StringTools;
 
 class KeyBindMenu extends FlxSubState
 {
-
     var keyTextDisplay:FlxText;
     var keyWarning:FlxText;
     var warningTween:FlxTween;
@@ -89,7 +88,7 @@ class KeyBindMenu extends FlxSubState
         blackBox = new FlxSprite(0,0).makeGraphic(FlxG.width,FlxG.height,FlxColor.BLACK);
         add(blackBox);
 
-        infoText = new FlxText(-10, 580, 1280, 'Current Mode: ${KeyBinds.gamepad ? 'GAMEPAD' : 'KEYBOARD'}. Press TAB to switch\n(${KeyBinds.gamepad ? 'RIGHT Trigger' : 'Escape'} to save, ${KeyBinds.gamepad ? 'LEFT Trigger' : 'Backspace'} to leave without saving. ${KeyBinds.gamepad ? 'START To change a keybind' : ''})', 72);
+        infoText = new FlxText(-10, 580, 1280, 'Current Mode: ${KeyBinds.gamepad ? 'GAMEPAD' : 'KEYBOARD'}. Press TAB to switch\n(${KeyBinds.gamepad ? 'RIGHT Trigger' : 'Backspace'} to save, ${KeyBinds.gamepad ? 'LEFT Trigger' : 'Escape'} to leave without saving. ${KeyBinds.gamepad ? 'START To change a keybind' : ''})', 72);
 		infoText.scrollFactor.set(0, 0);
 		infoText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		infoText.borderSize = 2;
@@ -140,7 +139,7 @@ class KeyBindMenu extends FlxSubState
                 if (FlxG.keys.justPressed.TAB)
                 {
                     KeyBinds.gamepad = !KeyBinds.gamepad;
-                    infoText.text = 'Current Mode: ${KeyBinds.gamepad ? 'GAMEPAD' : 'KEYBOARD'}. Press TAB to switch\n(${KeyBinds.gamepad ? 'RIGHT Trigger' : 'Escape'} to save, ${KeyBinds.gamepad ? 'LEFT Trigger' : 'Backspace'} to leave without saving. ${KeyBinds.gamepad ? 'START To change a keybind' : ''})';
+                    infoText.text = 'Current Mode: ${KeyBinds.gamepad ? 'GAMEPAD' : 'KEYBOARD'}. Press TAB to switch\n(${KeyBinds.gamepad ? 'RIGHT Trigger' : 'Backspace'} to save, ${KeyBinds.gamepad ? 'LEFT Trigger' : 'Escape'} to leave without saving. ${KeyBinds.gamepad ? 'START To change a keybind' : ''})';
                     textUpdate();
                 }
 
@@ -148,10 +147,10 @@ class KeyBindMenu extends FlxSubState
                     FlxG.sound.play(Paths.sound('scrollMenu'));
                     state = "input";
                 }
-                else if(FlxG.keys.justPressed.ESCAPE){
+                else if(#if android FlxG.android.justReleased.BACK || #end FlxG.keys.justPressed.BACKSPACE){
                     quit();
                 }
-                else if (FlxG.keys.justPressed.BACKSPACE){
+                else if (FlxG.keys.justPressed.ESCAPE){
                     reset();
                 }
                 if (gamepad != null) // GP Logic
@@ -192,7 +191,7 @@ class KeyBindMenu extends FlxSubState
             case "waiting":
                 if (gamepad != null && KeyBinds.gamepad) // GP Logic
                 {
-                    if(FlxG.keys.justPressed.ESCAPE){ // just in case you get stuck
+                    if(FlxG.keys.justPressed.BACKSPACE){ // just in case you get stuck
                         gpKeys[curSelected] = tempKey;
                         state = "select";
                         FlxG.sound.play(Paths.sound('confirmMenu'));
@@ -217,7 +216,7 @@ class KeyBindMenu extends FlxSubState
                 }
                 else
                 {
-                    if(FlxG.keys.justPressed.ESCAPE){
+                    if(FlxG.keys.justPressed.BACKSPACE){
                         keys[curSelected] = tempKey;
                         state = "select";
                         FlxG.sound.play(Paths.sound('confirmMenu'));
