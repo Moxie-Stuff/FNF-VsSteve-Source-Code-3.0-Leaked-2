@@ -2206,8 +2206,10 @@ class PlayState extends MusicBeatState
                         #if !web
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
                         #else
+                        //var vocalPath = Paths.voices(PlayState.SONG.song));
+                        var vocalPath= 'songs:assets/songs/' + SONG.song.toLowerCase() + 'Voices.mp3';
                         var vocals:FlxSound = new FlxSound();
-                        var vocalAsset:AudioElement = cast(OpenFlAssets.getAudio(Paths.voices(PlayState.SONG.song)));
+                        var vocalAsset:AudioElement = cast(OpenFlAssets.getSound(vocalPath);
                         vocals.loadStream(vocalAsset);
                         #end
 		} else {
