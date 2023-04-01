@@ -5,7 +5,7 @@ package;
 #if web
 import js.html.AudioElement;
 #end
-import openfl.utils.Assets;
+import openfl.utils.Assets as OpenFlAssets;
 import Options.SpectatorMode;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
@@ -337,7 +337,7 @@ class PlayState extends MusicBeatState
 		repReleases = 0;
 
 		#if mobile
-		executeModchart = Assets.exists("assets/data/" + PlayState.SONG.song.toLowerCase() + "/modchart.lua");
+		executeModchart = OpenFlAssets.exists("assets/data/" + PlayState.SONG.song.toLowerCase() + "/modchart.lua");
 		#elseif desktop
 		executeModchart = FileSystem.exists(Paths.lua(PlayState.SONG.song.toLowerCase() + "/modchart"));
 		#end
@@ -2207,7 +2207,7 @@ class PlayState extends MusicBeatState
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
                         #else
                         var vocals:FlxSound = new FlxSound();
-                        var vocalAsset:AudioElement = cast(Assets.getAudio(Paths.voices(PlayState.SONG.song)));
+                        var vocalAsset:AudioElement = cast(OpenFlAssets.getAudio(Paths.voices(PlayState.SONG.song)));
                         vocals.loadStream(vocalAsset);
                         #end
 		} else {
