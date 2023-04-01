@@ -6,6 +6,9 @@ import lime.graphics.Image;
 #if sys
 import sys.FileSystem;
 #end
+#if android
+import android.widget.Toast;
+#end
 import openfl.utils.ByteArray;
 import openfl.display.Sprite;
 import flixel.tweens.FlxTween;
