@@ -3,7 +3,7 @@ package;
 // If youre seeing this... Tiago here...
 // mcagabe19: ok
 #if web
-import import openfl.media.Sound;
+import openfl.media.Sound;
 #end
 import Options.SpectatorMode;
 import flixel.input.keyboard.FlxKey;
