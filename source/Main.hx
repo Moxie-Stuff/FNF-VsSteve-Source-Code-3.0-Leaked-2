@@ -86,6 +86,8 @@ class Main extends Sprite
 		game = new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen);
 
 		addChild(game);
+		
+		#if !web FlxG.plugins.add(new screenshotplugin.ScreenShotPlugin()); #end
 
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
