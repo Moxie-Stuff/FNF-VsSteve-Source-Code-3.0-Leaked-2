@@ -97,10 +97,22 @@ class ScreenShotPlugin extends flixel.FlxBasic {
             var png:ByteArray = shot.bitmapData.encode(shot.bitmapData.rect, (saveFormat == PNG ? new openfl.display.PNGEncoderOptions() : new openfl.display.JPEGEncoderOptions()));
             png.position = 0;
             #if sys
+            try
+            {
             var path = "screenshots/Screenshot " + Date.now().toString().split(":").join("-") + saveFormat;
             if (!FileSystem.exists(SUtil.getStorageDirectory() + './screenshots/'))
                 FileSystem.createDirectory(SUtil.getStorageDirectory() + './screenshots/');
             sys.io.File.saveBytes(path, png);
+            }
+            catch (e:Dynamic)
+		{
+			#if android
+			Toast.makeText("Error!\nClouldn't save screenshot because:\n" + e, Toast.LENGTH_LONG);
+			#else
+			Sys.println("Error!\nClouldn't save the screenshot because:\n" + e);
+			#end
+		}
+		#end
             #end
             flashSprite.alpha = 1;
             FlxTween.tween(flashSprite, {alpha: 0}, 0.25);
