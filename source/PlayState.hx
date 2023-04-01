@@ -2201,7 +2201,7 @@ class PlayState extends MusicBeatState
 
 		curSong = songData.song;
 
-                if (SONG.needsVoices)
+                if (SONG.needsVoices) {
                         #if !web
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
                         #else
@@ -2209,9 +2209,8 @@ class PlayState extends MusicBeatState
                         var vocalAsset:Sound = openfl.utils.Assets.getSound(Paths.voices(PlayState.SONG.song));
                         vocals.loadStream(vocalAsset);
                         #end
-		else
-			vocals = new FlxSound();
-                
+		} else {
+			vocals = new FlxSound(); }
 
 		FlxG.sound.list.add(vocals);
 
