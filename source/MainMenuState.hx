@@ -73,6 +73,8 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		FlxG.mouse.visible = true;
+		
+        ExtrasState.selectedBonus = false;
 
 		camFollow = new FlxObject(0, 0, 0, 0);
 		add(camFollow);

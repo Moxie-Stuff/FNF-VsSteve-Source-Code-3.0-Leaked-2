@@ -253,7 +253,6 @@ class FreeplayState extends MusicBeatState
 
 		if (controls.BACK)
 		{
-                        ExtrasState.selectedBonus = false;
 			FlxG.switchState(new MainMenuState());
 		}
 
