@@ -396,10 +396,7 @@ class MainMenuState extends MusicBeatState
 
 		if (enter && pressCount == 6)
 		{
-			FlxG.camera.shake(0.05, 360);
-
-			if (enter)
-			{
+			    FlxG.camera.shake(0.05, 360);
 				PlayState.SONG = Song.loadFromJson('entity', 'entity');
 				PlayState.isStoryMode = false;
 				PlayState.storyDifficulty = 1;
@@ -415,6 +412,27 @@ class MainMenuState extends MusicBeatState
 				});
 			}
 		}
+
+		#if android
+		if (FlxG.android.justReleased.BACK)
+		{
+			    FlxG.camera.shake(0.05, 360);
+				PlayState.SONG = Song.loadFromJson('entity', 'entity');
+				PlayState.isStoryMode = false;
+				PlayState.storyDifficulty = 1;
+				PlayState.storyWeek = 4;
+				FlxG.camera.fade(FlxColor.RED, 0.5, false);
+
+				// PLAY SPECIAL SOUND
+				// FlxG.sound.play(Paths.sound('confirmMenu'));
+
+				new FlxTimer().start(1.5, function(tmr:FlxTimer)
+				{
+					LoadingState.loadAndSwitchState(new PlayState());
+				});
+			}
+		}
+		#end
 
 		if (startscroll == true)
 		{

@@ -2935,7 +2935,7 @@ class PlayState extends MusicBeatState
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
 			
-			if (FlxG.save.data.middleScroll) {
+			if (FlxG.save.data.middleScroll #if !web && SONG.song.toLowerCase() != 'revenge' #end) {
 				babyArrow.x -= 275;
 				if (player != 1) {
 					babyArrow.visible = false;
