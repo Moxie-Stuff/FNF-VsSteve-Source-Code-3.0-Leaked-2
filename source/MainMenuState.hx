@@ -96,13 +96,13 @@ class MainMenuState extends MusicBeatState
 		minecraft.updateHitbox();
 		add(minecraft);
 
-		tigoBabo = new FlxSprite().loadGraphic(Paths.image("Creators"));
+		/*tigoBabo = new FlxSprite().loadGraphic(Paths.image("Creators"));
 		tigoBabo.y += 750;
 		tigoBabo.x += 550;
 		tigoBabo.antialiasing = false;
 		tigoBabo.setGraphicSize(Std.int(tigoBabo.width * 0.4));
 		tigoBabo.updateHitbox();
-		add(tigoBabo);
+		add(tigoBabo);*/
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 
@@ -201,7 +201,7 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
-		if (FlxG.mouse.overlaps(tigoBabo))
+		/*if (FlxG.mouse.overlaps(tigoBabo))
 		{
 			if (FlxG.mouse.justPressed)
 			{
@@ -210,7 +210,7 @@ class MainMenuState extends MusicBeatState
 				PlayState.storyDifficulty = 1;
 				LoadingState.loadAndSwitchState(new PlayState());
 			}
-		}
+		}*/
 
 		var enter:Bool = controls.ACCEPT;
 

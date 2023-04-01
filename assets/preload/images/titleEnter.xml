@@ -1,7 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="titleEnter.png">
-	<!-- Created with Adobe Animate version 20.0.0.17400 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="ENTER PRESSED0000" x="0" y="0" width="1477" height="79"/>
-	<SubTexture name="Press Enter to Begin0000" x="0" y="89" width="1495" height="96"/>
+<SubTexture name="ENTER PRESSED0000" x="0" y="0" width="889" height="78" frameX="-5" frameY="-1" frameWidth="1477" frameHeight="79" />
+<SubTexture name="Press Enter to Begin0000" x="0" y="78" width="889" height="77" frameX="-5" frameY="0" frameWidth="1495" frameHeight="96" />
 </TextureAtlas>

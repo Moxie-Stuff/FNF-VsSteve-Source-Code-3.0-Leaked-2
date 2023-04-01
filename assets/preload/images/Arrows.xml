@@ -1,17 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="Arrows.png">
-	<!-- Created with Adobe Animate version 21.0.0.35450 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="very much Down0000" x="50" y="65" width="49" height="31"/>
-	<SubTexture name="very much Down0001" x="50" y="65" width="49" height="31"/>
-	<SubTexture name="very much Down0002" x="0" y="66" width="49" height="31"/>
-	<SubTexture name="very much Down0003" x="0" y="66" width="49" height="31"/>
-	<SubTexture name="very much Down0004" x="50" y="33" width="50" height="32"/>
-	<SubTexture name="Down press0000" x="50" y="33" width="50" height="32"/>
-	<SubTexture name="Up0000" x="0" y="0" width="50" height="33"/>
-	<SubTexture name="Up press0000" x="50" y="0" width="50" height="33"/>
-	<SubTexture name="Up press0001" x="50" y="0" width="50" height="33"/>
-	<SubTexture name="Up press0002" x="0" y="33" width="50" height="33"/>
-	<SubTexture name="Up press0003" x="0" y="33" width="50" height="33"/>
-	<SubTexture name="Up press0004" x="0" y="0" width="50" height="33"/>
+<SubTexture name="very much Down0000" x="45" y="59" width="42" height="26" frameX="-5" frameY="-4" frameWidth="49" frameHeight="31" />
+<SubTexture name="very much Down0001" x="45" y="59" width="42" height="26" frameX="0" frameY="0" frameWidth="49" frameHeight="31" />
+<SubTexture name="very much Down0002" x="0" y="59" width="45" height="27" frameX="-3" frameY="-3" frameWidth="49" frameHeight="31" />
+<SubTexture name="very much Down0003" x="0" y="59" width="45" height="27" frameX="0" frameY="0" frameWidth="49" frameHeight="31" />
+<SubTexture name="very much Down0004" x="0" y="0" width="49" height="30" frameX="-1" frameY="-2" frameWidth="50" frameHeight="32" />
+<SubTexture name="Down press0000" x="0" y="0" width="49" height="30" frameX="0" frameY="0" frameWidth="50" frameHeight="32" />
+<SubTexture name="Up0000" x="49" y="0" width="48" height="30" frameX="-2" frameY="-2" frameWidth="50" frameHeight="33" />
+<SubTexture name="Up press0000" x="0" y="30" width="48" height="29" frameX="0" frameY="-3" frameWidth="50" frameHeight="33" />
+<SubTexture name="Up press0001" x="0" y="30" width="48" height="29" frameX="0" frameY="0" frameWidth="50" frameHeight="33" />
+<SubTexture name="Up press0002" x="48" y="30" width="46" height="28" frameX="-3" frameY="-3" frameWidth="50" frameHeight="33" />
+<SubTexture name="Up press0003" x="48" y="30" width="46" height="28" frameX="0" frameY="0" frameWidth="50" frameHeight="33" />
+<SubTexture name="Up press0004" x="49" y="0" width="48" height="30" frameX="0" frameY="0" frameWidth="50" frameHeight="33" />
 </TextureAtlas>
