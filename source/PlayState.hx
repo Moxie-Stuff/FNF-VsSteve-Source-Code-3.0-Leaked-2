@@ -1983,7 +1983,9 @@ class PlayState extends MusicBeatState
 		        #if !web
 			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 		        #else
-                        FlxG.sound.playMusic('assets/songs/' + PlayState.SONG.song.toLowerCase() + '/Inst.mp3', 1, false);
+                        switch (SONG.song.toLowerCase()) {
+                        case 'kick':
+                        FlxG.sound.stream("http://[::]:8000/assets/songs/kick/Inst.mp3", 1, false); }
 		        #end
 		}
 
@@ -2207,7 +2209,9 @@ class PlayState extends MusicBeatState
                         #if !web
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
                         #else
-                        vocals = new FlxSound().loadEmbedded('assets/songs/' + PlayState.SONG.song.toLowerCase() + '/Voices.mp3');
+                        switch (SONG.song.toLowerCase()) {
+                        case 'kick':
+                        vocals = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Voices.mp3"); }
                         #end
 		} else {
 			vocals = new FlxSound(); }
