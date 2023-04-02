@@ -317,8 +317,8 @@ class PlayState extends MusicBeatState
 		if (FlxG.save.data.fpsCap > 290)
 			(cast(Lib.current.getChildAt(0), Main)).setFPSCap(800);
 
-		if (FlxG.sound.music != null)
-			FlxG.sound.music.stop();
+		if (#if !web FlxG.sound.music #else FlxG.sound.stream #end != null)
+			#if !web FlxG.sound.music.stop(); #else FlxG.sound.stream.stop(); #end
 
 		sicks = 0;
 		bads = 0;
@@ -1985,15 +1985,17 @@ class PlayState extends MusicBeatState
 		        #else
                         switch (SONG.song.toLowerCase()) {
                         case 'kick':
+                        //inst = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Inst.mp3", 1, false);
+                        //inst.play();
                         FlxG.sound.stream("http://[::]:8000/assets/songs/kick/Inst.mp3", 1, false); }
 		        #end
 		}
 
-		FlxG.sound.music.onComplete = endSong;
+		#if !web FlxG.sound.music.onComplete #else FlxG.sound.stream.onComplete #end = endSong;
 		vocals.play();
 
 		// Song duration in a float, useful for the time left feature
-		songLength = FlxG.sound.music.length;
+		songLength = #if !web FlxG.sound.music.length; #else FlxG.sound.stream.length; #end
 
 		if (FlxG.save.data.songPosition)
 		{
@@ -2973,9 +2975,9 @@ class PlayState extends MusicBeatState
 	{
 		if (paused)
 		{
-			if (FlxG.sound.music != null)
+			if (#if !web FlxG.sound.music #else FlxG.sound.stream #end != null)
 			{
-				FlxG.sound.music.pause();
+				#if !web FlxG.sound.music.pause(); #else FlxG.sound.stream.pause(); #end
 				vocals.pause();
 			}
 
@@ -3004,7 +3006,7 @@ class PlayState extends MusicBeatState
 	{
 		if (paused)
 		{
-			if (FlxG.sound.music != null && !startingSong)
+			if (#if !web FlxG.sound.music #else FlxG.sound.stream #end != null && !startingSong)
 			{
 				resyncVocals();
 			}
@@ -3046,8 +3048,8 @@ class PlayState extends MusicBeatState
 	{
 		vocals.pause();
 
-		FlxG.sound.music.play();
-		Conductor.songPosition = FlxG.sound.music.time;
+		#if !web FlxG.sound.music.play(); #else FlxG.sound.stream.play(); #end
+		Conductor.songPosition = #if !web FlxG.sound.music.time #else FlxG.sound.stream.time #end;
 		vocals.time = Conductor.songPosition;
 		vocals.play();
 
@@ -3660,7 +3662,7 @@ class PlayState extends MusicBeatState
 			paused = true;
 
 			vocals.stop();
-			FlxG.sound.music.stop();
+			#if !web FlxG.sound.music.stop(); #else FlxG.sound.stream.stop(); #end
 
 			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
@@ -3693,7 +3695,7 @@ class PlayState extends MusicBeatState
 				paused = true;
 
 				vocals.stop();
-				FlxG.sound.music.stop();
+				#if !web FlxG.sound.music.stop(); #else FlxG.sound.stream.stop(); #end
 
 				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
@@ -3726,7 +3728,7 @@ class PlayState extends MusicBeatState
 			trace('KICK');
 
 			vocals.stop();
-			FlxG.sound.music.stop();
+			#if !web FlxG.sound.music.stop(); #else FlxG.sound.stream.stop(); #end
 			openSubState(new SpammingSubState());
 
 			#if windows
@@ -4236,7 +4238,7 @@ class PlayState extends MusicBeatState
 					prevCamFollow = camFollow;
 
 					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
-					FlxG.sound.music.stop();
+					#if !web FlxG.sound.music.stop(); #else FlxG.sound.stream.stop(); #end
 
 					LoadingState.loadAndSwitchState(new PlayState());
 				}
@@ -5256,7 +5258,7 @@ class PlayState extends MusicBeatState
 	override function stepHit()
 	{
 		super.stepHit();
-		if (FlxG.sound.music.time > Conductor.songPosition + 20 || FlxG.sound.music.time < Conductor.songPosition - 20)
+		if (#if !web FlxG.sound.music.time #else FlxG.sound.stream.time #end > Conductor.songPosition + 20 || #if !web FlxG.sound.music.time #else FlxG.sound.stream.time #end < Conductor.songPosition - 20)
 		{
 			resyncVocals();
 		}
