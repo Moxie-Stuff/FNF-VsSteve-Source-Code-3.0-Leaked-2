@@ -1993,7 +1993,7 @@ class PlayState extends MusicBeatState
                         }
                         catch (e:Dynamic)
 		                {
-		                msg = 'ERROR: ' + e + 'Please Try Restart Song.'
+		                msg = 'ERROR: ' + e + 'Please Try Restart Song.';
 		                Lib.application.window.alert(msg, 'Idk');
 		                }
 		        #end
@@ -2227,7 +2227,7 @@ class PlayState extends MusicBeatState
                         }
                         catch (e:Dynamic)
 		                {
-		                msg = 'ERROR: ' + e + 'Please Try Restart Song.'
+		                msg = 'ERROR: ' + e + 'Please Try Restart Song.';
 		                Lib.application.window.alert(msg, 'Idk');
 		                }
 		                #end
