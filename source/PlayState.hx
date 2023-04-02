@@ -317,8 +317,8 @@ class PlayState extends MusicBeatState
 		if (FlxG.save.data.fpsCap > 290)
 			(cast(Lib.current.getChildAt(0), Main)).setFPSCap(800);
 
-		if (#if !web FlxG.sound.music #else FlxG.sound.sound #end != null)
-			#if !web FlxG.sound.music.stop(); #else FlxG.sound.sound.stop(); #end
+		if (#if !web FlxG.sound.music #else FlxG.sound.music #end != null)
+			#if !web FlxG.sound.music.stop(); #else FlxG.sound.music.stop(); #end
 
 		sicks = 0;
 		bads = 0;
@@ -1991,11 +1991,11 @@ class PlayState extends MusicBeatState
 		        #end
 		}
 
-		#if !web FlxG.sound.music.onComplete #else FlxG.sound.sound.onComplete #end = endSong;
+		#if !web FlxG.sound.music.onComplete #else FlxG.sound.music.onComplete #end = endSong;
 		vocals.play();
 
 		// Song duration in a float, useful for the time left feature
-		songLength = #if !web FlxG.sound.music.length; #else FlxG.sound.sound.length; #end
+		songLength = #if !web FlxG.sound.music.length; #else FlxG.sound.music.length; #end
 
 		if (FlxG.save.data.songPosition)
 		{
@@ -2975,9 +2975,9 @@ class PlayState extends MusicBeatState
 	{
 		if (paused)
 		{
-			if (#if !web FlxG.sound.music #else FlxG.sound.sound #end != null)
+			if (#if !web FlxG.sound.music #else FlxG.sound.music #end != null)
 			{
-				#if !web FlxG.sound.music.pause(); #else FlxG.sound.sound.pause(); #end
+				#if !web FlxG.sound.music.pause(); #else FlxG.sound.music.pause(); #end
 				vocals.pause();
 			}
 
@@ -3006,7 +3006,7 @@ class PlayState extends MusicBeatState
 	{
 		if (paused)
 		{
-			if (#if !web FlxG.sound.music #else FlxG.sound.sound #end != null && !startingSong)
+			if (#if !web FlxG.sound.music #else FlxG.sound.music #end != null && !startingSong)
 			{
 				resyncVocals();
 			}
@@ -3048,8 +3048,8 @@ class PlayState extends MusicBeatState
 	{
 		vocals.pause();
 
-		#if !web FlxG.sound.music.play(); #else FlxG.sound.sound.play(); #end
-		Conductor.songPosition = #if !web FlxG.sound.music.time #else FlxG.sound.sound.time #end;
+		#if !web FlxG.sound.music.play(); #else FlxG.sound.music.play(); #end
+		Conductor.songPosition = #if !web FlxG.sound.music.time #else FlxG.sound.music.time #end;
 		vocals.time = Conductor.songPosition;
 		vocals.play();
 
@@ -3662,7 +3662,7 @@ class PlayState extends MusicBeatState
 			paused = true;
 
 			vocals.stop();
-			#if !web FlxG.sound.music.stop(); #else FlxG.sound.sound.stop(); #end
+			#if !web FlxG.sound.music.stop(); #else FlxG.sound.music.stop(); #end
 
 			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
@@ -3695,7 +3695,7 @@ class PlayState extends MusicBeatState
 				paused = true;
 
 				vocals.stop();
-				#if !web FlxG.sound.music.stop(); #else FlxG.sound.sound.stop(); #end
+				#if !web FlxG.sound.music.stop(); #else FlxG.sound.music.stop(); #end
 
 				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
@@ -3728,7 +3728,7 @@ class PlayState extends MusicBeatState
 			trace('KICK');
 
 			vocals.stop();
-			#if !web FlxG.sound.music.stop(); #else FlxG.sound.sound.stop(); #end
+			#if !web FlxG.sound.music.stop(); #else FlxG.sound.music.stop(); #end
 			openSubState(new SpammingSubState());
 
 			#if windows
@@ -4238,7 +4238,7 @@ class PlayState extends MusicBeatState
 					prevCamFollow = camFollow;
 
 					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
-					#if !web FlxG.sound.music.stop(); #else FlxG.sound.sound.stop(); #end
+					#if !web FlxG.sound.music.stop(); #else FlxG.sound.music.stop(); #end
 
 					LoadingState.loadAndSwitchState(new PlayState());
 				}
@@ -5258,7 +5258,7 @@ class PlayState extends MusicBeatState
 	override function stepHit()
 	{
 		super.stepHit();
-		if (#if !web FlxG.sound.music.time #else FlxG.sound.sound.time #end > Conductor.songPosition + 20 || #if !web FlxG.sound.music.time #else FlxG.sound.sound.time #end < Conductor.songPosition - 20)
+		if (#if !web FlxG.sound.music.time #else FlxG.sound.music.time #end > Conductor.songPosition + 20 || #if !web FlxG.sound.music.time #else FlxG.sound.music.time #end < Conductor.songPosition - 20)
 		{
 			resyncVocals();
 		}
