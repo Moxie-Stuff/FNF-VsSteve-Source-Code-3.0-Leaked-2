@@ -1985,9 +1985,9 @@ class PlayState extends MusicBeatState
 		        #else
                         switch (SONG.song.toLowerCase()) {
                         case 'kick':
-                        //inst = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Inst.mp3", 1, false);
+                        //inst = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Inst.mp3?901293", 1, false);
                         //inst.play();
-                        FlxG.sound.stream("http://[::]:8000/assets/songs/kick/Inst.mp3", 1, false); }
+                        FlxG.sound.stream("http://[::]:8000/assets/songs/kick/Inst.mp3?901293", 1, false); }
 		        #end
 		}
 
@@ -2168,6 +2168,8 @@ class PlayState extends MusicBeatState
 			+ " | Misses: "
 			+ misses, iconRPC);
 		#end
+		
+		#if web resyncVocals(); #end
 	}
 
 	function songStartTextStartTween()
@@ -2213,7 +2215,7 @@ class PlayState extends MusicBeatState
                         #else
                         switch (SONG.song.toLowerCase()) {
                         case 'kick':
-                        vocals = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Voices.mp3"); }
+                        vocals = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Voices.mp3?901293"); }
                         #end
 		} else {
 			vocals = new FlxSound(); }

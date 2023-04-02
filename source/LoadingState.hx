@@ -117,10 +117,11 @@ class LoadingState extends MusicBeatState
                                 FlxG.bitmap.add(Paths.image(image)); }
 				callbacks = new MultiCallback(onLoad);
 				var introComplete = callbacks.add("introComplete");
+				//#if !web
 				checkLoadSong(getSongPath());
 				if (PlayState.SONG.needsVoices)
 					checkLoadSong(getVocalPath());
-				//checkLibrary("shared");
+				//#end
                                 FlxGraphic.defaultPersist = false;
                                 setLoadingText("Done!");
 				var fadeTime = 0.5;
