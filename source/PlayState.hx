@@ -1983,11 +1983,19 @@ class PlayState extends MusicBeatState
 		        #if !web
 			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 		        #else
+		                try
+		                {
                         switch (SONG.song.toLowerCase()) {
                         case 'kick':
                         //inst = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Inst.mp3?901293", 1, false);
                         //inst.play();
                         FlxG.sound.stream("http://[::]:8000/assets/songs/kick/Inst.mp3?901293", 1, false); }
+                        }
+                        catch (e:Dynamic)
+		                {
+		                msg = 'ERROR: ' + e + 'Please Try Restart Song.'
+		                Lib.application.window.alert(msg, 'Idk');
+		                }
 		        #end
 		}
 
@@ -2168,8 +2176,6 @@ class PlayState extends MusicBeatState
 			+ " | Misses: "
 			+ misses, iconRPC);
 		#end
-		
-		#if web resyncVocals(); #end
 	}
 
 	function songStartTextStartTween()
@@ -2213,10 +2219,18 @@ class PlayState extends MusicBeatState
                         #if !web
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
                         #else
+                        try
+                        {
                         switch (SONG.song.toLowerCase()) {
                         case 'kick':
                         vocals = new FlxSound().loadStream("http://[::]:8000/assets/songs/kick/Voices.mp3?901293"); }
-                        #end
+                        }
+                        catch (e:Dynamic)
+		                {
+		                msg = 'ERROR: ' + e + 'Please Try Restart Song.'
+		                Lib.application.window.alert(msg, 'Idk');
+		                }
+		                #end
 		} else {
 			vocals = new FlxSound(); }
 
