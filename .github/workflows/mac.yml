@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         build: [release]
-        version: [11, 12]
+        version: [11, 12, 13]
     steps:
       - name: Checkout
         uses: actions/checkout@main
