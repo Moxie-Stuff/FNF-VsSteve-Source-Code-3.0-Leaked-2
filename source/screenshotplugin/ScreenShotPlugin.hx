@@ -124,9 +124,9 @@ class ScreenShotPlugin extends flixel.FlxBasic {
             screenshotSprite.alpha = 1;
             FlxTween.tween(screenshotSprite, {alpha: 0}, 0.5, {startDelay: .5});
             //TODO: open image in mac and linux
-            #if windows
+            /*#if windows
             Sys.command('"' + Sys.getCwd() + path + '"');
-            #end
+            #end*/
 
             if (onScreenshot != null)
                 onScreenshot();
