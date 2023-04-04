@@ -3652,9 +3652,6 @@ class PlayState extends MusicBeatState {
 
 								daNote.clipRect = swagRect;
 							}
-						}
-					}
-				}
 
 				if (!daNote.mustPress && daNote.wasGoodHit) {
 					if (SONG.song != 'Tutorial')
@@ -4328,6 +4325,18 @@ class PlayState extends MusicBeatState {
 						boyfriend.holdTimer = daNote.sustainLength;
 					}
 				}
+
+				playerStrums.forEach(function(spr:FlxSprite)
+				{
+					if (pressArray[spr.ID] && spr.animation.curAnim.name != 'confirm')
+						spr.animation.play('pressed');
+					if (!holdArray[spr.ID])
+						spr.animation.play('static');
+					//dumbass pixel shit offset
+					//fucking bullshit but works LOL
+					spr.centerOffsets();
+
+				});
 			}
 		});
 

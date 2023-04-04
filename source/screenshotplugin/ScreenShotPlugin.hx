@@ -110,7 +110,7 @@ class ScreenShotPlugin extends flixel.FlxBasic {
             catch (e:Dynamic)
 		{
 			#if android
-			Toast.makeText("Error!\nClouldn't save screenshot because:\n" + e, Toast.LENGTH_LONG);
+			Toast.makeText("Error!\nClouldn't save the screenshot because:\n" + e, Toast.LENGTH_LONG);
 			#else
 			SUtil.println("Error!\nClouldn't save the screenshot because:\n" + e);
 			#end
