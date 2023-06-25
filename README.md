@@ -1,4 +1,4 @@
-![Vs Stev logo](https://github.com/MobilePorting/FNF-VsSteve-Source-Code-3.0-Leaked/raw/main/assets/preload/images/logoBumpin.png)
+![Vs Stev logo](https://raw.githubusercontent.com/mcagabe19/FNF-VsSteve-Source-Code-3.0-Leaked/main/assets/preload/images/logoBumpin.png)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/MobilePorting/FNF-VsSteve-Source-Code-3.0-Leaked)
 
