@@ -1,89 +1,93 @@
 package;
 
-#if windows
-import Sys.sleep;
-import discord_rpc.DiscordRpc;
-
-using StringTools;
+import hxdiscord_rpc.Discord;
+import hxdiscord_rpc.Types;
+import sys.thread.Thread;
 
 class DiscordClient
 {
-	public function new()
+	public static var isInitialized:Bool = false;
+
+	public function new():Void
 	{
 		trace("Discord Client starting...");
-		DiscordRpc.start({
-			clientID: "872775971592364102", // change this to what ever the fuck you want lol
-			onReady: onReady,
-			onError: onError,
-			onDisconnected: onDisconnected
-		});
+
+		var handlers:DiscordEventHandlers = DiscordEventHandlers.create();
+		handlers.ready = cpp.Function.fromStaticFunction(onReady);
+		handlers.disconnected = cpp.Function.fromStaticFunction(onDisconnected);
+		handlers.errored = cpp.Function.fromStaticFunction(onError);
+		Discord.Initialize("872775971592364102", cpp.RawPointer.addressOf(handlers), 1, null);
+
 		trace("Discord Client started.");
 
 		while (true)
 		{
-			DiscordRpc.process();
-			sleep(2);
-			//trace("Discord Client Update");
+			#if DISCORD_DISABLE_IO_THREAD
+			Discord.UpdateConnection();
+			#end
+			Discord.RunCallbacks();
+			Sys.sleep(2);
 		}
 
-		DiscordRpc.shutdown();
+		Discord.Shutdown();
 	}
 
-	public static function shutdown()
+	public static function shutdown():Void
 	{
-		DiscordRpc.shutdown();
+		Discord.Shutdown();
 	}
 
-	static function onReady()
+	public static function initialize():Void
 	{
-		DiscordRpc.presence({
-			details: "In the Menus",
-			state: null,
-			largeImageKey: 'icon',
-			largeImageText: "fridaynightfunkin"
-		});
-	}
-
-	static function onError(_code:Int, _message:String)
-	{
-		trace('Error! $_code : $_message');
-	}
-
-	static function onDisconnected(_code:Int, _message:String)
-	{
-		trace('Disconnected! $_code : $_message');
-	}
-
-	public static function initialize()
-	{
-		var DiscordDaemon = sys.thread.Thread.create(() ->
+		Thread.create(function()
 		{
 			new DiscordClient();
 		});
+
 		trace("Discord Client initialized");
+
+		isInitialized = true;
 	}
 
-	public static function changePresence(details:String, state:Null<String>, ?smallImageKey : String, ?hasStartTimestamp : Bool, ?endTimestamp: Float)
+	public static function changePresence(details:String, state:Null<String>, ?smallImageKey:String, ?hasStartTimestamp:Bool, ?endTimestamp:Float):Void
 	{
-		var startTimestamp:Float = if(hasStartTimestamp) Date.now().getTime() else 0;
+		var startTimestamp:Float = hasStartTimestamp ? Date.now().getTime() : 0;
 
 		if (endTimestamp > 0)
-		{
 			endTimestamp = startTimestamp + endTimestamp;
-		}
 
-		DiscordRpc.presence({
-			details: details,
-			state: state,
-			largeImageKey: 'icon',
-			largeImageText: "fridaynightfunkin",
-			smallImageKey : smallImageKey,
-			// Obtained times are in milliseconds so they are divided so Discord can use it
-			startTimestamp : Std.int(startTimestamp / 1000),
-            endTimestamp : Std.int(endTimestamp / 1000)
-		});
+		var discordPresence:DiscordRichPresence = DiscordRichPresence.create();
+		discordPresence.details = details;
+		discordPresence.state = state;
+		discordPresence.largeImageKey = "icon";
+		discordPresence.largeImageText = "fridaynightfunkin";
+		discordPresence.smallImageKey = smallImageKey;
+		discordPresence.startTimestamp = Std.int(startTimestamp / 1000);
+		discordPresence.endTimestamp = Std.int(endTimestamp / 1000);
+		Discord.UpdatePresence(cpp.RawConstPointer.addressOf(discordPresence));
+	}
 
-		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
+	private static function onReady(request:cpp.RawConstPointer<DiscordUser>):Void
+	{
+		var requestPtr:cpp.Star<DiscordUser> = cpp.ConstPointer.fromRaw(request).ptr;
+
+		trace('Discord: Connected to User (' + cast(requestPtr.username, String) + '#' + cast(requestPtr.discriminator, String) + ')');
+
+		var discordPresence:DiscordRichPresence = DiscordRichPresence.create();
+		discordPresence.details = "In the Menus";
+		discordPresence.state = null;
+		discordPresence.largeImageKey = "icon";
+		discordPresence.largeImageText = "fridaynightfunkin";
+		Discord.UpdatePresence(cpp.RawConstPointer.addressOf(discordPresence));
+	}
+
+	private static function onDisconnected(errorCode:Int, message:cpp.ConstCharStar):Void
+	{
+		trace('Discord: Disconnected (' + errorCode + ': ' + cast(message, String) + ')');
+	}
+
+	private static function onError(errorCode:Int, message:cpp.ConstCharStar):Void
+	{
+		trace('Discord: Error (' + errorCode + ': ' + cast(message, String) + ')');
 	}
 }
-#end

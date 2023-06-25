@@ -80,7 +80,8 @@
 
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
-	<haxelib name="discord_rpc" if="windows"/>
+	<haxelib name="hxdiscord_rpc" if="windows"/>
+        <haxelib name="hxjsonast" if="desktop"/>
 	<haxelib name="linc_luajit" if="cpp"/>
 	<haxelib name="actuate" />
 	<!--<haxelib name="extension-webm" if="desktop" />-->
