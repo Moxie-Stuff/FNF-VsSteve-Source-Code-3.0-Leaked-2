@@ -26,8 +26,8 @@ enum FlxActionMode
 {
 	A;
 	B;
+	P;
 	A_B;
-	P_A_B;
 	A_B_C;
 	A_B_E;
 	A_B_X_Y;
@@ -117,11 +117,9 @@ class FlxVirtualPad extends FlxSpriteGroup
 				add(buttonA = createButton(FlxG.width - 132, FlxG.height - 135, 'a', 0xFF0000));
 			case B:
 				add(buttonB = createButton(FlxG.width - 132, FlxG.height - 135, 'b', 0xFFCB00));
-			case A_B:
-				add(buttonB = createButton(FlxG.width - 258, FlxG.height - 135, 'b', 0xFFCB00));
-				add(buttonA = createButton(FlxG.width - 132, FlxG.height - 135, 'a', 0xFF0000));
-			case P_A_B:
+			case P:
 				add(buttonP = createButton(FlxG.width - 132, 0, 'x', 0x99062D));
+			case A_B:
 				add(buttonB = createButton(FlxG.width - 258, FlxG.height - 135, 'b', 0xFFCB00));
 				add(buttonA = createButton(FlxG.width - 132, FlxG.height - 135, 'a', 0xFF0000));
 			case A_B_C:
@@ -176,7 +174,7 @@ class FlxVirtualPad extends FlxSpriteGroup
 		buttonDown = FlxDestroyUtil.destroy(buttonDown);
 		buttonRight = FlxDestroyUtil.destroy(buttonRight);
 
-                buttonLeft2 = FlxDestroyUtil.destroy(buttonLeft2);
+		buttonLeft2 = FlxDestroyUtil.destroy(buttonLeft2);
 		buttonUp2 = FlxDestroyUtil.destroy(buttonUp2);
 		buttonDown2 = FlxDestroyUtil.destroy(buttonDown2);
 		buttonRight2 = FlxDestroyUtil.destroy(buttonRight2);
@@ -203,7 +201,13 @@ class FlxVirtualPad extends FlxSpriteGroup
 			graphic = FlxG.bitmap.add('assets/mobile/virtualpad/default.png');
 
 		var button:FlxButton = new FlxButton(X, Y);
-		button.frames = FlxTileFrames.fromGraphic(graphic, FlxPoint.get(Std.int(graphic.width / 3), graphic.height));
+		try {
+			button.frames = FlxTileFrames.fromGraphic(graphic, FlxPoint.get(Std.int(graphic.width / 3), graphic.height));
+		}
+		catch (e){
+			trace("Failed to create button(s) " + e.message);
+			return null;
+		}
 		button.solid = false;
 		button.immovable = true;
 		button.scrollFactor.set();

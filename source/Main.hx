@@ -87,7 +87,7 @@ class Main extends Sprite
 
 		addChild(game);
 
-		#if !web FlxG.plugins.add(new screenshotplugin.ScreenShotPlugin()); #end
+		#if !web FlxG.plugins.add(new SSPlugin()); #end
 
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
