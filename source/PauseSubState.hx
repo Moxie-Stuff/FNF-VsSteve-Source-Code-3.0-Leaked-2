@@ -1,7 +1,7 @@
 package;
 
 import openfl.Lib;
-#if cpp
+#if LUA_ALLOWED
 import llua.Lua;
 #end
 import Controls.Control;
@@ -197,7 +197,7 @@ class PauseSubState extends MusicBeatSubstate
 						FlxG.save.data.downscroll = false;
 					}
 					PlayState.loadRep = false;
-					#if cpp
+					#if LUA_ALLOWED
 					if (PlayState.luaModchart != null)
 					{
 						PlayState.luaModchart.die();
@@ -216,7 +216,7 @@ class PauseSubState extends MusicBeatSubstate
 							FlxG.save.data.downscroll = false;
 						}
 						PlayState.loadRep = false;
-						#if cpp
+						#if LUA_ALLOWED
 						if (PlayState.luaModchart != null)
 						{
 							PlayState.luaModchart.die();
@@ -235,7 +235,7 @@ class PauseSubState extends MusicBeatSubstate
 						FlxG.save.data.downscroll = false;
 					}
 					PlayState.loadRep = false;
-					#if cpp
+					#if LUA_ALLOWED
 					if (PlayState.luaModchart != null)
 					{
 						PlayState.luaModchart.die();

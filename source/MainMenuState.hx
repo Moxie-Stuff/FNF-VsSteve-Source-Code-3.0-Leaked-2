@@ -16,7 +16,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import lime.system.System;
-#if windows
+#if desktop
 import Discord.DiscordClient;
 #end
 
@@ -60,7 +60,7 @@ class MainMenuState extends MusicBeatState
 	{
                 Paths.clearUnusedMemory();
                 Paths.clearStoredMemory();
-		#if windows
+		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Main Menu", null);
 		#end

@@ -15,7 +15,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import lime.system.System;
-#if windows
+#if desktop
 import Discord.DiscordClient;
 #end
 
@@ -45,7 +45,7 @@ class ExtrasState extends MusicBeatState
 	{
                 Paths.clearUnusedMemory();
                 Paths.clearStoredMemory();
-		#if windows
+		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Extras Menu", null);
 		#end

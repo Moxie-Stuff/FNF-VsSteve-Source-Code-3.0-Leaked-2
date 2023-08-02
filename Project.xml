@@ -37,6 +37,7 @@
 	<!-- <define name="PRELOAD_ALL" /> -->
 	<define name="PRELOAD_ALL" unless="web" />
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL"/>
+        <define name="LUA_ALLOWED" if="cpp" unless="rpi || nolua"/>
 	<define name="mobileCweb" if="web" unless="mobileC"/>
 	<define name="mobileC" if="mobile" unless="mobileCweb"/>
 
@@ -82,7 +83,7 @@
 	<haxelib name="flixel-ui" />
 	<haxelib name="hxdiscord_rpc" if="desktop"/>
         <haxelib name="hxjsonast" if="desktop"/>
-	<haxelib name="linc_luajit" if="cpp"/>
+	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
 	<haxelib name="actuate" />
 	<!--<haxelib name="extension-webm" if="desktop" />-->
 	<haxelib name="extension-androidtools" if="android" />

@@ -13,7 +13,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.system.System;
 
-#if windows
+#if desktop
 import Discord.DiscordClient;
 #end
 
@@ -35,7 +35,7 @@ class SpammingSubState extends MusicBeatSubstate
 
 	override function create()
 		{
-			#if windows
+			#if desktop
 			// Updating Discord Rich Presence
 			DiscordClient.changePresence("In the Main Menu", null);
 			#end
