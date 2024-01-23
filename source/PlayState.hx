@@ -3917,7 +3917,7 @@ class PlayState extends MusicBeatState
 						{
 							if (healthBar.percent > 20)
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								if (daNote.noteType == 5)
 									GappleEffect();
@@ -3926,7 +3926,7 @@ class PlayState extends MusicBeatState
 							}
 							else (healthBar.percent < 20);
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								daNote.destroy();
 							}
@@ -3936,7 +3936,7 @@ class PlayState extends MusicBeatState
 
 							if (healthBar.percent > 20)
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								if (daNote.noteType == 5)
 									GappleEffect();
@@ -3945,7 +3945,7 @@ class PlayState extends MusicBeatState
 							}
 							else (healthBar.percent < 20);
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								daNote.destroy();
 							}
@@ -3955,7 +3955,7 @@ class PlayState extends MusicBeatState
 
 							if (healthBar.percent > 20)
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								if (daNote.noteType == 5)
 									GappleEffect();
@@ -3964,7 +3964,7 @@ class PlayState extends MusicBeatState
 							}
 							else (healthBar.percent < 20);
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								daNote.destroy();
 							}
@@ -3974,7 +3974,7 @@ class PlayState extends MusicBeatState
 
 							if (healthBar.percent > 20)
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								if (daNote.noteType == 5)
 									GappleEffect();
 								notes.remove(daNote, true);
@@ -3983,7 +3983,7 @@ class PlayState extends MusicBeatState
 							}
 							else (healthBar.percent < 20);
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								daNote.destroy();
 							}
@@ -3992,7 +3992,7 @@ class PlayState extends MusicBeatState
 						{
 							if (healthBar.percent > 20)
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								if (daNote.noteType == 5)
 									GappleEffect();
 								notes.remove(daNote, true);
@@ -4001,7 +4001,7 @@ class PlayState extends MusicBeatState
 							}
 							else (healthBar.percent < 20);
 							{
-								daNote.kill();
+								#if !web daNote.kill(); #end
 								notes.remove(daNote, true);
 								daNote.destroy();
 							}
@@ -4043,7 +4043,7 @@ class PlayState extends MusicBeatState
 					{
 						if (daNote.isSustainNote && daNote.wasGoodHit)
 						{
-							daNote.kill();
+							#if !web daNote.kill(); #end
 							notes.remove(daNote, true);
 							daNote.destroy();
 							health += 0.005;
@@ -4650,7 +4650,7 @@ class PlayState extends MusicBeatState
 					for (note in dumbNotes)
 					{
 						FlxG.log.add("killing dumb ass note at " + note.strumTime);
-						note.kill();
+						#if !web note.kill(); #end
 						notes.remove(note, true);
 						note.destroy();
 					}
@@ -4922,7 +4922,7 @@ class PlayState extends MusicBeatState
 			note.wasGoodHit = true;
 			vocals.volume = 1;
 
-			note.kill();
+			#if !web note.kill(); #end
 			notes.remove(note, true);
 			note.destroy();
 
