@@ -24,7 +24,7 @@ class OptionsMenu extends MusicBeatState
 
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
-			#if !web new DFJKOption(controls), #end
+			new DFJKOption(controls),
 			new SpectatorMode("Disables all the HUD Elements and serves for a good Cinematic Gamplay."),
 			new DownscrollOption("Change the layout of the strumline."),
 			new MiddleScroll("Toggle the middlescroll"),
