@@ -51,8 +51,8 @@
 	</section>
 	
 	<section if="NO_PRELOAD_ALL">
-		<library name="songs"    preload="true" if="web"/>
-		<library name="songs"    preload="false" unless="web"/>
+		<!--<library name="songs"    preload="true" if="web"/>-->
+		<library name="songs"    preload="false" />
 		<library name="shared"   preload="false" />
 		<!--<library name="tutorial" preload="false" />-->
 		<!--<library name="week6"    preload="false" />-->
@@ -105,9 +105,8 @@
 	<haxedef name="HXCPP_STACK_TRACE" />
 
 	        <section if="android">
-			<android gradle-version="7.3.3" gradle-plugin="7.2" />
+			<!--<android gradle-version="7.4.2" gradle-plugin="7.3.1" />-->
 	
-			<!-- Do whatever you want I'm tired uninstall and install everytime -->
 			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
 		</section>
 
