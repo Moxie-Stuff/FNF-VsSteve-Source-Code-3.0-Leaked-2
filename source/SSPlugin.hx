@@ -155,18 +155,9 @@ class SSPlugin extends flixel.FlxBasic
 			#if sys
 			try
 			{
-				#if mobile
-				if (!FileSystem.exists(SUtil.getStorageDirectory() + './screenshots/'))
-					FileSystem.createDirectory(SUtil.getStorageDirectory() + './screenshots/');
-				var path = SUtil.getStorageDirectory()
-					+ 'screenshots/Screenshot '
-					+ Date.now().toString().replace(' ', '-').replace(':', "'")
-					+ saveFormat;
-				#else
 				var path = "screenshots/Screenshot " + Date.now().toString().split(":").join("-") + saveFormat;
 				if (!FileSystem.exists("./screenshots/"))
 					FileSystem.createDirectory("./screenshots/");
-				#end
 				sys.io.File.saveBytes(path, png);
 			}
 			catch (e:Dynamic)
