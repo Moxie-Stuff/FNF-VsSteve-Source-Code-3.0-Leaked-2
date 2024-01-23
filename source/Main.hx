@@ -12,6 +12,8 @@ import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
+import haxe.io.Path;
+import lime.app.Application;
 
 class Main extends Sprite
 {
@@ -102,27 +104,18 @@ class Main extends Sprite
 
 	var fpsCounter:FPS;
 
-	public function toggleFPS(fpsEnabled:Bool):Void {
+	public function toggleFPS(fpsEnabled:Bool):Void
 		fpsCounter.visible = fpsEnabled;
-	}
 
-	public function changeFPSColor(color:FlxColor)
-	{
+	public function changeFPSColor(color:FlxColor):Void
 		fpsCounter.textColor = color;
-	}
 
-	public function setFPSCap(cap:Float)
-	{
+	public function setFPSCap(cap:Float):Void
 		openfl.Lib.current.stage.frameRate = cap;
-	}
 
 	public function getFPSCap():Float
-	{
 		return openfl.Lib.current.stage.frameRate;
-	}
 
 	public function getFPS():Float
-	{
 		return fpsCounter.currentFPS;
-	}
 }
