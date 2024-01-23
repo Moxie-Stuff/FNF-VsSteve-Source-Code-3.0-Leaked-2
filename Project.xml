@@ -82,13 +82,11 @@
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
 	<haxelib name="hxdiscord_rpc" if="desktop"/>
-        <haxelib name="hxjsonast" if="desktop"/>
 	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
 	<haxelib name="actuate" />
-	<!--<haxelib name="extension-webm" if="desktop" />-->
 	<haxelib name="extension-androidtools" if="android" />
 
-	<haxelib name="hxcpp-debug-server" if="desktop debug" />
+	<haxelib name="hxcpp-debug-server" if="debug" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
@@ -109,7 +107,7 @@
 	<section if="android">
 		<config>
 			<!--Gradle-->
-			<!--<android gradle-version="7.4.2" gradle-plugin="7.3.1" />--> <!-- ENABLE THIS IF YOU HAVE ISSUES AT COMPILE -->
+			<android gradle-version="7.4.2" gradle-plugin="7.3.1" /> <!-- ENABLE THIS IF YOU HAVE ISSUES AT COMPILE -->
 
 			<!--Target SDK-->
 			<android min-sdk-version="16" target-sdk-version="29" max-sdk-version="33" if="${lime &lt; 8.1.0}"/>
