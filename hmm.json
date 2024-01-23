@@ -27,10 +27,8 @@
     },
     {
       "name": "hxcpp",
-      "type": "git",
-      "dir": null,
-      "ref": "master",
-      "url": "https://github.com/mcagabe19-stuff/hxcpp"
+      "type": "haxelib",
+      "version": "4.2.1"
     },
     {
       "name": "hscript",
