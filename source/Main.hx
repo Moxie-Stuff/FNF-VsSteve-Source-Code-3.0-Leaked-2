@@ -77,11 +77,15 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
+		#if android
+                Sys.setCwd(Path.addTrailingSlash(android.content.Context.getExternalFilesDir()));
+                #elseif ios
+                Sys.setCwd(LimeSystem.applicationStorageDirectory);
+                #end
+
 		#if !debug
 		initialState = TitleState;
 		#end
-		
-		SUtil.checkFiles();
 
 		game = new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen);
 
