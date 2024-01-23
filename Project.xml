@@ -67,7 +67,7 @@
 	<!--<assets path="assets/week6"    library="week6"    exclude="*.ogg" if="web"/>-->
 	<!--<assets path="assets/week6"    library="week6"    exclude="*.mp3" unless="web"/>-->
 	
-	<assets path='example_mods' rename='mods' embed='false'/>
+	<!--<assets path='example_mods' rename='mods' embed='false'/>-->
 
 	<assets path="assets/fonts" embed='true'/>
 	<!-- _______________________________ Libraries ______________________________ -->
@@ -104,20 +104,15 @@
 	<haxedef name="HXCPP_STACK_LINE" />
 	<haxedef name="HXCPP_STACK_TRACE" />
 
-	<section if="android">
-		<config>
-			<!--Gradle-->
-			<android gradle-version="7.4.2" gradle-plugin="7.3.1" /> <!-- ENABLE THIS IF YOU HAVE ISSUES AT COMPILE -->
+	        <section if="android">
+			<!-- Do whatever you want I'm tired uninstall and install everytime -->
+			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
+		</section>
 
-			<!--Target SDK-->
-			<android min-sdk-version="16" target-sdk-version="29" max-sdk-version="33" if="${lime &lt; 8.1.0}"/>
-                </config>
-	</section>
-
-	<section if="ios">
-		<!--Dependency--> 
-		<dependency name="Metal.framework" if="${lime &lt; 8.0.0}" />
-	</section>
+		<section if="ios">
+			<define name='objc' />
+			<ios linker-flags='-ObjC' />
+		</section>
 
         <haxedef name="no-deprecation-warnings" unless="debug" />
 
