@@ -29,7 +29,7 @@ jobs:
           haxelib install flixel-ui --quiet
           haxelib install hscript --quiet
           haxelib install flixel-addons --quiet
-          haxelib git linc_luajit https://github.com/mcagabe19/linc_luajit.git
+          haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git
           haxelib git extension-androidtools https://github.com/MAJigsaw77/extension-androidtools.git
       - name: Setup Lime
         run: |
