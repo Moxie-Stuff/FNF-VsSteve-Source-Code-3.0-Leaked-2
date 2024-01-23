@@ -46,13 +46,10 @@ class Log
 				#if sys
 				try
 				{
-					if (!FileSystem.exists(SUtil.getStorageDirectory() + 'logs'))
-						FileSystem.createDirectory(SUtil.getStorageDirectory() + 'logs');
+					if (!FileSystem.exists('logs'))
+						FileSystem.createDirectory('logs');
 
-					File.saveContent(SUtil.getStorageDirectory()
-						+ 'logs/'
-						+ Lib.application.meta.get('file')
-						+ '-'
+					File.saveContent('logs/'
 						+ Date.now().toString().replace(' ', '-').replace(':', "'")
 						+ '.txt',
 						message
@@ -60,10 +57,10 @@ class Log
 				}
 				catch (e:Dynamic)
 				{
-					#if android
-					Toast.makeText("Error!\nClouldn't save the crash log because:\n" + e, Toast.LENGTH_LONG);
+					#if (android && debug)
+					Toast.makeText("Error!\nCouldn't save the crash log because:\n" + e, Toast.LENGTH_LONG);
 					#else
-					println("Error!\nClouldn't save the crash log because:\n" + e);
+					println("Error!\nCouldn't save the crash log because:\n" + e);
 					#end
 				}
 				#end
