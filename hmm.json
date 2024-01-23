@@ -2,35 +2,28 @@
   "dependencies": [
     {
       "name": "lime",
-      "type": "git",
-      "dir": null,
-      "ref": "main",
-      "url": "https://github.com/mcagabe19-stuff/lime"
+      "type": "haxelib",
+      "version": "7.9.0"
     },
     {
       "name": "openfl",
       "type": "haxelib",
-      "version": null
+      "version": "9.1.0"
     },
     {
       "name": "flixel",
       "type": "haxelib",
-      "version": null
+      "version": "4.11.0"
     },
     {
       "name": "flixel-addons",
       "type": "haxelib",
-      "version": null
-    },
-    {
-      "name": "flixel-tools",
-      "type": "haxelib",
-      "version": null
+      "version": "2.11.0"
     },
     {
       "name": "flixel-ui",
       "type": "haxelib",
-      "version": null
+      "version": "2.3.3"
     },
     {
       "name": "hxcpp",
@@ -42,12 +35,12 @@
     {
       "name": "hscript",
       "type": "haxelib",
-      "version": null
+      "version": "2.4.0"
     },
     {
       "name": "actuate",
       "type": "haxelib",
-      "version": null
+      "version": "1.8.9"
     },
     {
       "name": "hxdiscord_rpc",
