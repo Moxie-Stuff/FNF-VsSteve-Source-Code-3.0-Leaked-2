@@ -105,14 +105,16 @@
 	<haxedef name="HXCPP_STACK_TRACE" />
 
 	        <section if="android">
+			<android gradle-version="7.4.2" gradle-plugin="7.3.1" />
+	
 			<!-- Do whatever you want I'm tired uninstall and install everytime -->
 			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
 		</section>
 
-		<section if="ios">
+		<!--<section if="ios">
 			<define name='objc' />
 			<ios linker-flags='-ObjC' />
-		</section>
+		</section>-->
 
         <haxedef name="no-deprecation-warnings" unless="debug" />
 	<haxedef name='no-inline' if="html5"/>
