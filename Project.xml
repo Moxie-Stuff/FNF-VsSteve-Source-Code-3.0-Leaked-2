@@ -3,8 +3,7 @@
 	<!-- _________________________ Application Settings _________________________ -->
 
 	<app title="Friday Night Funkin' Vs Steve" file="stevgotleaked" packageName="com.tracedinpurple.vssteve" package="com.tracedinpurple.vssteve" main="Main" version="0.2.7.1" company="TracedInPurple" />
-	<app preloader="flixel.system.FlxPreloader" unless="web"/>
-        <app preloader="source.Preloader" if="web"/>
+	<app preloader="flixel.system.FlxPreloader" />
 
 	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
 	<set name="SWF_VERSION" value="11.8" />
