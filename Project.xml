@@ -111,7 +111,7 @@
 			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
 		</section>
 
-		<<section if="ios">
+		<section if="ios">
 			<dependency name="Metal.framework" if="${lime &lt; 8.0.0}" />
 			<define name='objc' />
 			<ios linker-flags='-ObjC' />
