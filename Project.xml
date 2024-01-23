@@ -115,8 +115,11 @@
 		</section>
 
         <haxedef name="no-deprecation-warnings" unless="debug" />
-
 	<haxedef name='no-inline' if="html5"/>
+
+	<!--Macro fixes-->
+	<haxeflag name="--macro" value="allowPackage('flash')" />
+	<haxeflag name="--macro" value="include('my.pack')" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
