@@ -158,6 +158,9 @@ jobs:
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
 
+      - name: Mod The Lime
+        run: cd $(haxelib libpath lime)tools && rm tools.n && wget https://github.com/mcagabe19-stuff/lime/raw/main/tools/tools.n
+
       - name: Compile
         run: haxelib run lime build ios -final
 
