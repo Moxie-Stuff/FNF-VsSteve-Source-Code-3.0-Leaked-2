@@ -13,7 +13,7 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import haxe.io.Path;
-import lime.app.Application;
+import lime.system.System as LimeSystem;
 
 class Main extends Sprite
 {
