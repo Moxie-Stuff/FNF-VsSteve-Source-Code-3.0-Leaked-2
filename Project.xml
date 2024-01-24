@@ -104,6 +104,7 @@
 	<haxedef name="HXCPP_STACK_TRACE" />
 
 	        <section if="android">
+			<android target-sdk-version="29" />
 			<!--<android gradle-version="7.4.2" gradle-plugin="7.3.1" />-->
 	
 			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
